@@ -1,5 +1,7 @@
 package penjadwalanpelajaran.admin;
 
+import java.awt.Color;
+import java.awt.Font;
 import penjadwalanpelajaran.hari.*;
 
 public class JFrameAdminHariRabu extends javax.swing.JFrame {
@@ -7,6 +9,11 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
     public JFrameAdminHariRabu() {
         initComponents();
         setExtendedState(JFrameAdminHariRabu.MAXIMIZED_BOTH);
+        
+        jTableAdminHariRabu.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        jTableAdminHariRabu.getTableHeader().setOpaque(false);
+        jTableAdminHariRabu.getTableHeader().setForeground(Color.BLACK);
+        jTableAdminHariRabu.setRowHeight(25);
     }
 
     @SuppressWarnings("unchecked")
@@ -22,7 +29,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableAdminHariRabu = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -92,7 +99,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableAdminHariRabu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -103,7 +110,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableAdminHariRabu);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,7 +254,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -290,7 +297,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableAdminHariRabu;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

@@ -11,8 +11,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
         
         jTableHariSenin.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
         jTableHariSenin.getTableHeader().setOpaque(false);
-        jTableHariSenin.getTableHeader().setBackground(new Color(204, 204, 204));
-        jTableHariSenin.getTableHeader().setForeground(Color.WHITE);
+        jTableHariSenin.getTableHeader().setForeground(Color.BLACK);
         jTableHariSenin.setRowHeight(25);
     }
 
