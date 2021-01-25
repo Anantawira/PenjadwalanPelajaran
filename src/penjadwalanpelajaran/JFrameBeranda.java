@@ -1,12 +1,54 @@
 package penjadwalanpelajaran;
 
 import java.awt.Color;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class JFrameBeranda extends javax.swing.JFrame {
 
     public JFrameBeranda() {
         initComponents();
         setExtendedState(JFrameBeranda.MAXIMIZED_BOTH);
+        
+        tanggal_waktu_sekarang();
+    }
+    
+    public void tanggal_waktu_sekarang(){
+        Thread p=new Thread(){
+            public void run(){
+                for(;;){
+                    Calendar cal = new GregorianCalendar();
+                    int hari = cal.get(Calendar.DAY_OF_MONTH);
+                    int bulan = cal.get(Calendar.MONTH);
+                    int tahun = cal.get(Calendar.YEAR);
+                    jLabelTanggal.setText(hari+"/"+(bulan+1)+"/"+tahun);
+                    
+                    int jam = cal.get(Calendar.HOUR);
+                    int menit = cal.get(Calendar.MINUTE);
+                    int detik = cal.get(Calendar.SECOND);
+                    int AM_PM = cal.get(Calendar.AM_PM);
+                    
+                    String day_night = "";
+                        if (AM_PM == 1){
+                            day_night = "PM";
+                        } else {
+                            day_night = "AM";                         
+                        }
+                        
+                    String waktuu = jam + ":" + menit + ":" + detik + " " + day_night;
+                    jLabelWaktu.setText(waktuu);
+                    
+                    try {
+                        sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(JFrameBeranda.class.getName()).log(Level.SEVERE, null, ex);
+                    }               
+                }
+            }
+        };
+        p.start();
     }
     
     @SuppressWarnings("unchecked")
@@ -35,6 +77,10 @@ public class JFrameBeranda extends javax.swing.JFrame {
         jPanelHariRabu = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelTanggal = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabelWaktu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -392,6 +438,16 @@ public class JFrameBeranda extends javax.swing.JFrame {
                     .addGap(0, 54, Short.MAX_VALUE)))
         );
 
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
+        jLabel2.setText("Tanggal :");
+
+        jLabelTanggal.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
+        jLabel5.setText("Waktu :");
+
+        jLabelWaktu.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -413,7 +469,15 @@ public class JFrameBeranda extends javax.swing.JFrame {
                 .addComponent(jPanelHariRabu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(228, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelLoginToAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -421,12 +485,19 @@ public class JFrameBeranda extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelTanggal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelWaktu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
                         .addComponent(jPanelHariSenin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelLoginToAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -626,11 +697,15 @@ public class JFrameBeranda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelLoginToAdmin;
+    private javax.swing.JLabel jLabelTanggal;
+    private javax.swing.JLabel jLabelWaktu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
