@@ -65,21 +65,23 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabelTambahKelas" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabelLihatKelas" alignment="0" pref="378" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" max="32767" attributes="0"/>
+                          <Component id="jLabel1" pref="358" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="jSeparator1" min="-2" pref="338" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jPanelBarKembali" max="32767" attributes="0"/>
+                                  <Component id="jPanelBarLihatKelas" max="32767" attributes="0"/>
+                                  <Component id="jSeparator1" max="32767" attributes="0"/>
+                                  <Component id="jPanelBarTambahKelas" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jLabelBackButton" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -89,13 +91,13 @@
                       <Component id="jLabel1" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="jLabelLihatKelas" min="-2" pref="56" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelTambahKelas" min="-2" pref="56" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelBackButton" min="-2" pref="54" max="-2" attributes="0"/>
-                      <EmptySpace pref="354" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="jPanelBarLihatKelas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanelBarTambahKelas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanelBarKembali" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="343" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -118,75 +120,164 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabelTambahKelas">
+            <Container class="javax.swing.JPanel" name="jPanelBarLihatKelas">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="24" style="1"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Tambah Kelas"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTambahKelasMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTambahKelasMouseReleased"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTambahKelasMouseClicked"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTambahKelasMouseExited"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelTambahKelasMouseEntered"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarLihatKelasMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarLihatKelasMouseReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarLihatKelasMouseClicked"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarLihatKelasMouseExited"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarLihatKelasMouseEntered"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabelLihatKelas">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel3" alignment="0" pref="53" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="24" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Lihat Kelas"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanelBarTambahKelas">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="24" style="1"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value=" Lihat Kelas"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLihatKelasMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLihatKelasMouseReleased"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLihatKelasMouseClicked"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLihatKelasMouseExited"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLihatKelasMouseEntered"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarTambahKelasMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarTambahKelasMouseReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarTambahKelasMouseClicked"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarTambahKelasMouseExited"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarTambahKelasMouseEntered"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabelBackButton">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="340" max="32767" attributes="0"/>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel4" pref="330" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel4" pref="34" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="24" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Tambah Kelas"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanelBarKembali">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="18" style="1"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/penjadwalanpelajaran/gambar/iconbackbutton.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Kembali"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelBackButtonMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelBackButtonMouseReleased"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelBackButtonMouseClicked"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelBackButtonMouseExited"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelBackButtonMouseEntered"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarKembaliMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarKembaliMouseReleased"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarKembaliMouseClicked"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarKembaliMouseExited"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelBarKembaliMouseEntered"/>
               </Events>
-            </Component>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="340" max="32767" attributes="0"/>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Component id="jLabel6" alignment="1" pref="340" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel6" pref="34" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel6">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="24" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/penjadwalanpelajaran/gambar/iconbackbutton.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Kembali"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -260,9 +351,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanelTambahKelas" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jPanelTambahKelas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="jPanelLihatKelas" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanelLihatKelas" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -286,7 +383,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="950" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="927" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -306,7 +403,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="950" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="929" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
