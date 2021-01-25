@@ -1,10 +1,19 @@
 package penjadwalanpelajaran.hari;
 
+import java.awt.Color;
+import java.awt.Font;
+
 public class JFrameHariSenin extends javax.swing.JFrame {
 
     public JFrameHariSenin() {
         initComponents();
         setExtendedState(JFrameHariSenin.MAXIMIZED_BOTH);
+        
+        jTableHariSenin.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        jTableHariSenin.getTableHeader().setOpaque(false);
+        jTableHariSenin.getTableHeader().setBackground(new Color(204, 204, 204));
+        jTableHariSenin.getTableHeader().setForeground(Color.WHITE);
+        jTableHariSenin.setRowHeight(25);
     }
 
     @SuppressWarnings("unchecked")
@@ -20,7 +29,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableHariSenin = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +95,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableHariSenin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -97,7 +106,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableHariSenin);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -183,7 +192,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -217,7 +226,7 @@ public class JFrameHariSenin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableHariSenin;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
