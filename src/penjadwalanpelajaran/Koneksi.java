@@ -12,7 +12,7 @@ public class Koneksi {
     public void config() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/db_jadwal_pelajaran", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/jadwal_pelajaran", "root", "");
             stm = con.createStatement();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Koneksi Gagal"+e.getMessage());
