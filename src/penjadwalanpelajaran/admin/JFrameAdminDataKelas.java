@@ -1,14 +1,70 @@
 package penjadwalanpelajaran.admin;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import penjadwalanpelajaran.Koneksi;
 
 public class JFrameAdminDataKelas extends javax.swing.JFrame {
 
+    //deklarasi
+    Connection con;
+    Statement stat;
+    ResultSet rs;
+    String sql;
+    
     public JFrameAdminDataKelas() {
         initComponents();
         setExtendedState(JFrameAdminDataKelas.MAXIMIZED_BOTH);
         jPanelLihatKelas.setVisible(true);
         jPanelTambahKelas.setVisible(false);
+        LoadTable();
+        
+        Tbl_Admin_Data_Kelas.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        Tbl_Admin_Data_Kelas.getTableHeader().setOpaque(false);
+        Tbl_Admin_Data_Kelas.getTableHeader().setForeground(Color.BLACK);
+        Tbl_Admin_Data_Kelas.setRowHeight(25);
+        
+    }
+    
+    private void LoadTable(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("No");
+        model.addColumn("Ruang Kelas");
+        model.addColumn("Jurusan / Kelas");
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no=1;
+            String sql = "SELECT * FROM tb_kelas";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+                while(res.next()){
+                    model.addRow(new Object[]{no++,
+                                            res.getString(2),
+                                            res.getString(3) });
+                }
+                Tbl_Admin_Data_Kelas.setModel(model);
+            } catch (Exception e) {
+        }
+    }
+    
+    private void ResetDataTambah () {
+        Txt_Tambah_Ruang_Kelas.setText(null);
+        Txt_Tambah_Jurusan.setText(null);
+        
+    }
+    
+    private void ResetDataLihat () {
+        Txt_Lihat_Ruang_Kelas.setText(null);
+        Txt_Lihat_Jurusan.setText(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -30,23 +86,24 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         jPanelUtama = new javax.swing.JPanel();
         jPanelLihatKelas = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Txt_Cari_Ruang = new javax.swing.JTextField();
+        Btn_Cari_Ruang = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tbl_Admin_Data_Kelas = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Txt_Lihat_Ruang_Kelas = new javax.swing.JTextField();
+        Txt_Lihat_Jurusan = new javax.swing.JTextField();
+        Btn_Hapus = new javax.swing.JButton();
+        Btn_Edit = new javax.swing.JButton();
+        Btn_Refresh = new javax.swing.JButton();
         jPanelTambahKelas = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Txt_Tambah_Ruang_Kelas = new javax.swing.JTextField();
+        Txt_Tambah_Jurusan = new javax.swing.JTextField();
+        Btn_Reset = new javax.swing.JButton();
+        Btn_Simpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
@@ -260,12 +317,13 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         jPanelLihatKelas.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
-        jLabel5.setText("Cari Kelas");
+        jLabel5.setText("Cari Ruang");
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setText("Cari");
+        Btn_Cari_Ruang.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Cari_Ruang.setText("Cari");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tbl_Admin_Data_Kelas.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        Tbl_Admin_Data_Kelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -276,19 +334,42 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        Tbl_Admin_Data_Kelas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tbl_Admin_Data_KelasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tbl_Admin_Data_Kelas);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel7.setText("Ruang Kelas");
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
-        jLabel8.setText("Wali Kelas");
+        jLabel8.setText("Jurusan");
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton2.setText("Hapus");
+        Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Hapus.setText("Hapus");
+        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_HapusActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton3.setText("Edit");
+        Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Edit.setText("Edit");
+        Btn_Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_EditActionPerformed(evt);
+            }
+        });
+
+        Btn_Refresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Refresh.setText("Refresh");
+        Btn_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_RefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLihatKelasLayout = new javax.swing.GroupLayout(jPanelLihatKelas);
         jPanelLihatKelas.setLayout(jPanelLihatKelasLayout);
@@ -298,11 +379,13 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                 .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addGap(17, 17, 17)
+                        .addComponent(Txt_Cari_Ruang, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(Btn_Cari_Ruang)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Refresh))
                     .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,16 +396,16 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                                     .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Txt_Lihat_Ruang_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31)
-                                        .addComponent(jTextField3))))
+                                        .addComponent(Txt_Lihat_Jurusan))))
                             .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                                 .addGap(140, 140, 140)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Btn_Hapus)
                                 .addGap(36, 36, 36)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanelLihatKelasLayout.setVerticalGroup(
@@ -330,9 +413,10 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
             .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Cari_Ruang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Cari_Ruang, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -341,18 +425,18 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                         .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Txt_Lihat_Ruang_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelLihatKelasLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txt_Lihat_Jurusan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addGroup(jPanelLihatKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -362,16 +446,21 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         jLabel9.setText("Nama Ruang Kelas");
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel10.setText("Kelas");
+        jLabel10.setText("Jurusan / Kelas");
 
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton4.setText("Reset");
-
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton5.setText("Simpan");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Reset.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Reset.setText("Reset");
+        Btn_Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                Btn_ResetActionPerformed(evt);
+            }
+        });
+
+        Btn_Simpan.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Simpan.setText("Simpan");
+        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_SimpanActionPerformed(evt);
             }
         });
 
@@ -383,18 +472,18 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                 .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelTambahKelasLayout.createSequentialGroup()
                         .addGap(240, 240, 240)
-                        .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
                         .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                            .addComponent(jTextField5)))
+                            .addComponent(Txt_Tambah_Ruang_Kelas, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                            .addComponent(Txt_Tambah_Jurusan)))
                     .addGroup(jPanelTambahKelasLayout.createSequentialGroup()
                         .addGap(376, 376, 376)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton5)))
+                        .addComponent(Btn_Simpan)))
                 .addContainerGap(228, Short.MAX_VALUE))
         );
         jPanelTambahKelasLayout.setVerticalGroup(
@@ -402,16 +491,16 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
             .addGroup(jPanelTambahKelasLayout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_Ruang_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Jurusan, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanelTambahKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Btn_Reset, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(Btn_Simpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(192, Short.MAX_VALUE))
         );
 
@@ -514,9 +603,63 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         jPanelBarKembali.setBackground(new Color(26, 128, 179));
     }//GEN-LAST:event_jPanelBarKembaliMouseReleased
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
+        try {
+            String sql = "INSERT INTO tb_kelas VALUES (default,'"+Txt_Tambah_Ruang_Kelas.getText()+"','"+Txt_Tambah_Jurusan.getText()+"')";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_SimpanActionPerformed
+
+    private void Btn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ResetActionPerformed
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_ResetActionPerformed
+
+    private void Tbl_Admin_Data_KelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_KelasMouseClicked
+        int baris = Tbl_Admin_Data_Kelas.rowAtPoint(evt.getPoint());
+        String ruang_kelas = Tbl_Admin_Data_Kelas.getValueAt(baris, 1).toString();
+            Txt_Lihat_Ruang_Kelas.setText(ruang_kelas);
+        String jurusan = Tbl_Admin_Data_Kelas.getValueAt(baris,2).toString();
+            Txt_Lihat_Jurusan.setText(jurusan);
+    }//GEN-LAST:event_Tbl_Admin_Data_KelasMouseClicked
+
+    private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
+        try {
+            String sql ="UPDATE tb_kelas SET ruang_kelas = '"+Txt_Lihat_Ruang_Kelas.getText()+"', jurusan = '"+Txt_Lihat_Jurusan.getText()+"' WHERE ruang_kelas = '"+Txt_Lihat_Ruang_Kelas.getText()+"'";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Berhasil diedit");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Edit Data Gagal"+e.getMessage());
+        }
+        LoadTable();
+        ResetDataLihat();
+    }//GEN-LAST:event_Btn_EditActionPerformed
+
+    private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        LoadTable();
+    }//GEN-LAST:event_Btn_RefreshActionPerformed
+
+    private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+         try {
+            String sql ="DELETE FROM tb_kelas WHERE ruang_kelas ='"+Txt_Lihat_Ruang_Kelas.getText()+"'";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        LoadTable();
+        ResetDataLihat();
+    }//GEN-LAST:event_Btn_HapusActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -554,11 +697,18 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton Btn_Cari_Ruang;
+    private javax.swing.JButton Btn_Edit;
+    private javax.swing.JButton Btn_Hapus;
+    private javax.swing.JButton Btn_Refresh;
+    private javax.swing.JButton Btn_Reset;
+    private javax.swing.JButton Btn_Simpan;
+    private javax.swing.JTable Tbl_Admin_Data_Kelas;
+    private javax.swing.JTextField Txt_Cari_Ruang;
+    private javax.swing.JTextField Txt_Lihat_Jurusan;
+    private javax.swing.JTextField Txt_Lihat_Ruang_Kelas;
+    private javax.swing.JTextField Txt_Tambah_Jurusan;
+    private javax.swing.JTextField Txt_Tambah_Ruang_Kelas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -580,11 +730,5 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUtama;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

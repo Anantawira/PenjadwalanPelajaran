@@ -149,7 +149,6 @@ public class JFrameLogin extends javax.swing.JFrame {
         jPasswordField_Password.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jPasswordField_Password.setForeground(new java.awt.Color(51, 51, 51));
         jPasswordField_Password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jPasswordField_Password.setText("jPasswordField1");
         jPasswordField_Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton_Login.setBackground(new java.awt.Color(0, 102, 204));
@@ -199,11 +198,11 @@ public class JFrameLogin extends javax.swing.JFrame {
                             .addComponent(jTextField_Username)
                             .addComponent(jPasswordField_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(266, 266, 266)
-                        .addComponent(jButton_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -211,13 +210,13 @@ public class JFrameLogin extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel3)
-                .addGap(41, 41, 41)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel6)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPasswordField_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(jButton_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -284,7 +283,7 @@ public class JFrameLogin extends javax.swing.JFrame {
 
     private void jButton_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LoginActionPerformed
         try {
-            sql = "SELECT * FROM tb_login WHERE username='"+jTextField_Username.getText()+"' AND password='"+jPasswordField_Password.getText()+"'";
+            sql = "SELECT * FROM tb_user WHERE username='"+jTextField_Username.getText()+"' AND password='"+jPasswordField_Password.getText()+"'";
             rs = stat.executeQuery(sql);
             if(rs.next()){
                 if(jTextField_Username.getText().equals(rs.getString("username")) && jPasswordField_Password.getText().equals(rs.getString("password"))){
