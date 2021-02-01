@@ -1,14 +1,85 @@
 package penjadwalanpelajaran.admin;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class JFrameAdminDataGuru extends javax.swing.JFrame {
+    
+        //deklarasi
+        Connection con;
+        Statement stat;
+        ResultSet rs;
+        String sql;
 
     public JFrameAdminDataGuru() {
+
         initComponents();
         setExtendedState(JFrameAdminDataGuru.MAXIMIZED_BOTH);
         jPanelLihatGuru.setVisible(true);
         jPanelTambahGuru.setVisible(false);
+        LoadTable();
+        
+        Tbl_Admin_Data_Guru.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        Tbl_Admin_Data_Guru.getTableHeader().setOpaque(false);
+        Tbl_Admin_Data_Guru.getTableHeader().setForeground(Color.BLACK);
+        Tbl_Admin_Data_Guru.setRowHeight(25);
+    }
+    
+        private void LoadTable(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("No");
+        model.addColumn("NIP");
+        model.addColumn("Nama");
+        model.addColumn("Tgl Lahir");
+        model.addColumn("Alamat");
+        model.addColumn("No Telepon");
+        model.addColumn("Bid Mapel");
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no=1;
+            String sql = "SELECT * FROM tb_guru";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+                while(res.next()){
+                    model.addRow(new Object[]{no++,
+                                            res.getString(2),
+                                            res.getString(3),
+                                            res.getString(4),
+                                            res.getString(5),
+                                            res.getString(6),
+                                            res.getString(7)   });
+                }
+                Tbl_Admin_Data_Guru.setModel(model);
+            } catch (Exception e) {
+        }
+    }
+    
+    private void ResetDataTambah () {
+        Txt_Tambah_NIP.setText(null);
+        Txt_Tambah_Nama_Guru.setText(null);
+        Txt_Tambah_Tgl_Lahir.setText(null);
+        Txt_Tambah_Alamat.setText(null);
+        Txt_Tambah_No_Telepon.setText(null);
+        Txt_Tambah_Bid_Mapel.setText(null);
+        
+    }
+    
+        private void ResetDataLihat () {
+        Txt_Lihat_NIP.setText(null);
+        Txt_Lihat_Nama_Guru.setText(null);
+        Txt_Lihat_Tgl_Lahir.setText(null);
+        Txt_Lihat_Alamat.setText(null);
+        Txt_Lihat_No_Telepon.setText(null);
+        Txt_Lihat_Bid_Mapel.setText(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -31,23 +102,24 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jPanelLihatGuru = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Btn_Cari_Guru = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tbl_Admin_Data_Guru = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        TxtNamaGuru = new javax.swing.JTextField();
-        TxtNIP = new javax.swing.JTextField();
-        TxtTglLahir = new javax.swing.JTextField();
-        TxtAlamat = new javax.swing.JTextField();
-        TxtNoTelepon = new javax.swing.JTextField();
-        TxtMapel = new javax.swing.JTextField();
-        jButtonEdit = new javax.swing.JButton();
-        jButtonHapus = new javax.swing.JButton();
+        Txt_Lihat_Nama_Guru = new javax.swing.JTextField();
+        Txt_Lihat_NIP = new javax.swing.JTextField();
+        Txt_Lihat_Tgl_Lahir = new javax.swing.JTextField();
+        Txt_Lihat_Alamat = new javax.swing.JTextField();
+        Txt_Lihat_No_Telepon = new javax.swing.JTextField();
+        Txt_Lihat_Bid_Mapel = new javax.swing.JTextField();
+        Btn_Edit = new javax.swing.JButton();
+        Btn_Hapus = new javax.swing.JButton();
+        Btn_Refresh = new javax.swing.JButton();
         jPanelTambahGuru = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -55,14 +127,14 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Txt_Tambah_NIP = new javax.swing.JTextField();
+        Txt_Tambah_Tgl_Lahir = new javax.swing.JTextField();
+        Txt_Tambah_Alamat = new javax.swing.JTextField();
+        Txt_Tambah_No_Telepon = new javax.swing.JTextField();
+        Txt_Tambah_Bid_Mapel = new javax.swing.JTextField();
+        Txt_Tambah_Nama_Guru = new javax.swing.JTextField();
+        Btn_Reset_Tambah = new javax.swing.JButton();
+        Btn_Simpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
@@ -278,10 +350,10 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel5.setText("Nama Guru ");
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setText("Cari");
+        Btn_Cari_Guru.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Cari_Guru.setText("Cari");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tbl_Admin_Data_Guru.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -292,7 +364,12 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        Tbl_Admin_Data_Guru.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tbl_Admin_Data_GuruMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tbl_Admin_Data_Guru);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel7.setText("Nama Guru");
@@ -307,42 +384,57 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel10.setText("Tgl Lahir");
 
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
-        jLabel11.setText("Mapel");
+        jLabel11.setText("Bid Mapel");
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel12.setText("No Telepon");
 
-        TxtNIP.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Lihat_NIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNIPActionPerformed(evt);
+                Txt_Lihat_NIPActionPerformed(evt);
             }
         });
 
-        jButtonEdit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButtonEdit.setText("Edit");
+        Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Edit.setText("Edit");
 
-        jButtonHapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButtonHapus.setText("Hapus");
+        Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Hapus.setText("Hapus");
+        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_HapusActionPerformed(evt);
+            }
+        });
+
+        Btn_Refresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Refresh.setText("Refresh");
+        Btn_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_RefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLihatGuruLayout = new javax.swing.GroupLayout(jPanelLihatGuru);
         jPanelLihatGuru.setLayout(jPanelLihatGuruLayout);
         jPanelLihatGuruLayout.setHorizontalGroup(
             jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
                 .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(41, 41, 41)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(Btn_Cari_Guru)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Refresh))
                     .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
-                                .addGap(45, 45, 45)
+                                .addGap(29, 29, 29)
                                 .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,28 +445,30 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TxtNamaGuru, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtTglLahir, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtNoTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLihatGuruLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonHapus)
-                                .addGap(33, 33, 33)
-                                .addComponent(jButtonEdit)
-                                .addGap(106, 106, 106)))))
+                                    .addComponent(Txt_Lihat_Nama_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_NIP, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_Alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_Tgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_No_Telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_Bid_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Btn_Hapus)
+                                .addGap(35, 35, 35)
+                                .addComponent(Btn_Edit)
+                                .addGap(86, 86, 86)))))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanelLihatGuruLayout.setVerticalGroup(
             jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
@@ -383,31 +477,31 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                     .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_NIP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNamaGuru, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_Nama_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtTglLahir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txt_Lihat_Tgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_Alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNoTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_No_Telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_Bid_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(94, 94, 94))))
         );
 
@@ -429,49 +523,59 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel18.setText("No Telepon");
 
         jLabel19.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
-        jLabel19.setText("Mapel");
+        jLabel19.setText("Bidang Mapel");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_NIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Txt_Tambah_NIPActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_Tgl_Lahir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                Txt_Tambah_Tgl_LahirActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_Alamat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                Txt_Tambah_AlamatActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_No_Telepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                Txt_Tambah_No_TeleponActionPerformed(evt);
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_Bid_Mapel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                Txt_Tambah_Bid_MapelActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Tambah_Nama_Guru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                Txt_Tambah_Nama_GuruActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton2.setText("Reset");
+        Btn_Reset_Tambah.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Reset_Tambah.setText("Reset");
+        Btn_Reset_Tambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Reset_TambahActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton3.setText("Simpan");
+        Btn_Simpan.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Simpan.setText("Simpan");
+        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_SimpanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelTambahGuruLayout = new javax.swing.GroupLayout(jPanelTambahGuru);
         jPanelTambahGuru.setLayout(jPanelTambahGuruLayout);
@@ -479,9 +583,9 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
             jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTambahGuruLayout.createSequentialGroup()
                 .addGap(412, 412, 412)
-                .addComponent(jButton2)
+                .addComponent(Btn_Reset_Tambah)
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addComponent(Btn_Simpan)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTambahGuruLayout.createSequentialGroup()
                 .addContainerGap(249, Short.MAX_VALUE)
@@ -494,12 +598,12 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_NIP, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_Bid_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_No_Telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_Alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_Tgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Tambah_Nama_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(243, 243, 243))
         );
         jPanelTambahGuruLayout.setVerticalGroup(
@@ -508,31 +612,31 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_NIP, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Nama_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Tgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_No_Telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Bid_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelTambahGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Reset_Tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -635,33 +739,85 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jPanelBarKembali.setBackground(new Color(26, 128, 179));
     }//GEN-LAST:event_jPanelBarKembaliMouseReleased
 
-    private void TxtNIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNIPActionPerformed
+    private void Txt_Lihat_NIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Lihat_NIPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNIPActionPerformed
+    }//GEN-LAST:event_Txt_Lihat_NIPActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Txt_Tambah_NIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_NIPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_NIPActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void Txt_Tambah_Tgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Tgl_LahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_Tgl_LahirActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void Txt_Tambah_AlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_AlamatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_AlamatActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void Txt_Tambah_No_TeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_No_TeleponActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_No_TeleponActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void Txt_Tambah_Bid_MapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Bid_MapelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_Bid_MapelActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void Txt_Tambah_Nama_GuruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Nama_GuruActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_Txt_Tambah_Nama_GuruActionPerformed
+
+    private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
+        try {
+            String sql = "INSERT INTO tb_guru VALUES (default,'"+Txt_Tambah_NIP.getText()+"', '"+Txt_Tambah_Nama_Guru.getText()+"', '"+Txt_Tambah_Tgl_Lahir.getText()+"', '"+Txt_Tambah_Alamat.getText()+"', '"+Txt_Tambah_No_Telepon.getText()+"', '"+Txt_Tambah_Bid_Mapel.getText()+"')";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_SimpanActionPerformed
+
+    private void Btn_Reset_TambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_TambahActionPerformed
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_Reset_TambahActionPerformed
+
+    private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        LoadTable();
+    }//GEN-LAST:event_Btn_RefreshActionPerformed
+
+    private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+        try {
+            String sql ="DELETE FROM tb_guru WHERE nip ='"+Txt_Lihat_NIP.getText()+"'";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        LoadTable();
+        ResetDataLihat();
+    }//GEN-LAST:event_Btn_HapusActionPerformed
+
+    private void Tbl_Admin_Data_GuruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_GuruMouseClicked
+        int baris = Tbl_Admin_Data_Guru.rowAtPoint(evt.getPoint());
+        String NIP = Tbl_Admin_Data_Guru.getValueAt(baris, 1).toString();
+            Txt_Lihat_NIP.setText(NIP);
+        String nama_guru = Tbl_Admin_Data_Guru.getValueAt(baris,2).toString();
+            Txt_Lihat_Nama_Guru.setText(nama_guru);
+        String tgl_lahir = Tbl_Admin_Data_Guru.getValueAt(baris,3).toString();
+            Txt_Lihat_Tgl_Lahir.setText(tgl_lahir);
+        String alamat = Tbl_Admin_Data_Guru.getValueAt(baris,4).toString();
+            Txt_Lihat_Alamat.setText(alamat);
+        String no_telepon = Tbl_Admin_Data_Guru.getValueAt(baris,5).toString();
+            Txt_Lihat_No_Telepon.setText(no_telepon);
+        String bid_mapel = Tbl_Admin_Data_Guru.getValueAt(baris,6).toString();
+            Txt_Lihat_Bid_Mapel.setText(bid_mapel);
+    }//GEN-LAST:event_Tbl_Admin_Data_GuruMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -671,7 +827,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -697,17 +853,25 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TxtAlamat;
-    private javax.swing.JTextField TxtMapel;
-    private javax.swing.JTextField TxtNIP;
-    private javax.swing.JTextField TxtNamaGuru;
-    private javax.swing.JTextField TxtNoTelepon;
-    private javax.swing.JTextField TxtTglLahir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButtonEdit;
-    private javax.swing.JButton jButtonHapus;
+    private javax.swing.JButton Btn_Cari_Guru;
+    private javax.swing.JButton Btn_Edit;
+    private javax.swing.JButton Btn_Hapus;
+    private javax.swing.JButton Btn_Refresh;
+    private javax.swing.JButton Btn_Reset_Tambah;
+    private javax.swing.JButton Btn_Simpan;
+    private javax.swing.JTable Tbl_Admin_Data_Guru;
+    private javax.swing.JTextField Txt_Lihat_Alamat;
+    private javax.swing.JTextField Txt_Lihat_Bid_Mapel;
+    private javax.swing.JTextField Txt_Lihat_NIP;
+    private javax.swing.JTextField Txt_Lihat_Nama_Guru;
+    private javax.swing.JTextField Txt_Lihat_No_Telepon;
+    private javax.swing.JTextField Txt_Lihat_Tgl_Lahir;
+    private javax.swing.JTextField Txt_Tambah_Alamat;
+    private javax.swing.JTextField Txt_Tambah_Bid_Mapel;
+    private javax.swing.JTextField Txt_Tambah_NIP;
+    private javax.swing.JTextField Txt_Tambah_Nama_Guru;
+    private javax.swing.JTextField Txt_Tambah_No_Telepon;
+    private javax.swing.JTextField Txt_Tambah_Tgl_Lahir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -737,13 +901,6 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUtama;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

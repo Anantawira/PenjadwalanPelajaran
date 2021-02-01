@@ -384,21 +384,23 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jTextField1" min="-2" pref="175" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Btn_Cari_Guru" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Btn_Refresh" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="468" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel8" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
@@ -411,20 +413,20 @@
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="TxtNamaGuru" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="TxtNIP" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="TxtAlamat" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="TxtTglLahir" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="TxtNoTelepon" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="TxtMapel" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_Nama_Guru" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_NIP" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_Alamat" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_Tgl_Lahir" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_No_Telepon" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_Bid_Mapel" min="-2" pref="233" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jButtonHapus" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="jButtonEdit" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="Btn_Hapus" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="Btn_Edit" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -437,10 +439,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel5" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Btn_Refresh" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="jTextField1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="Btn_Cari_Guru" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -451,37 +456,37 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel8" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="TxtNIP" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_NIP" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel7" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="TxtNamaGuru" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_Nama_Guru" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TxtTglLahir" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_Tgl_Lahir" min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel9" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="TxtAlamat" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_Alamat" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel12" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="TxtNoTelepon" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_No_Telepon" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel11" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="TxtMapel" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_Bid_Mapel" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jButtonEdit" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="jButtonHapus" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="Btn_Edit" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="Btn_Hapus" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                               </Group>
@@ -501,7 +506,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField1">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="Btn_Cari_Guru">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="14" style="1"/>
@@ -516,7 +521,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable1">
+                    <Component class="javax.swing.JTable" name="Tbl_Admin_Data_Guru">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="4" rowCount="4">
@@ -527,6 +532,9 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tbl_Admin_Data_GuruMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -567,7 +575,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="15" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Mapel"/>
+                    <Property name="text" type="java.lang.String" value="Bid Mapel"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
@@ -578,22 +586,22 @@
                     <Property name="text" type="java.lang.String" value="No Telepon"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtNamaGuru">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Nama_Guru">
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtNIP">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_NIP">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtNIPActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Lihat_NIPActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtTglLahir">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Tgl_Lahir">
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtAlamat">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Alamat">
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtNoTelepon">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_No_Telepon">
                 </Component>
-                <Component class="javax.swing.JTextField" name="TxtMapel">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Bid_Mapel">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButtonEdit">
+                <Component class="javax.swing.JButton" name="Btn_Edit">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="14" style="1"/>
@@ -601,13 +609,27 @@
                     <Property name="text" type="java.lang.String" value="Edit"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButtonHapus">
+                <Component class="javax.swing.JButton" name="Btn_Hapus">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_HapusActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Btn_Refresh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Refresh"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_RefreshActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -623,9 +645,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="412" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="Btn_Reset_Tambah" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Btn_Simpan" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -640,12 +662,12 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField2" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="jTextField6" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="jTextField5" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="jTextField7" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_NIP" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Bid_Mapel" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_No_Telepon" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Alamat" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Tgl_Lahir" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Nama_Guru" min="-2" pref="305" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
                       </Group>
@@ -657,37 +679,37 @@
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel14" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_NIP" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel15" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Nama_Guru" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel16" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Tgl_Lahir" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel17" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Alamat" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel18" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_No_Telepon" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel19" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jTextField6" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_Bid_Mapel" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="Btn_Reset_Tambah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="72" max="32767" attributes="0"/>
                       </Group>
@@ -740,54 +762,60 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="17" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Mapel"/>
+                    <Property name="text" type="java.lang.String" value="Bidang Mapel"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_NIP">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_NIPActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Tgl_Lahir">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Tgl_LahirActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Alamat">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_AlamatActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_No_Telepon">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_No_TeleponActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Bid_Mapel">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Bid_MapelActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Nama_Guru">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Nama_GuruActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="Btn_Reset_Tambah">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Reset"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Reset_TambahActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="Btn_Simpan">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Simpan"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_SimpanActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

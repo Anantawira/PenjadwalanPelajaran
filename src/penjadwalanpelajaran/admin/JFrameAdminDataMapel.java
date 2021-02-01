@@ -1,14 +1,68 @@
 package penjadwalanpelajaran.admin;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
+    //deklarasi
+    Connection con;
+    Statement stat;
+    ResultSet rs;
+    String sql;
+    
     public JFrameAdminDataMapel() {
         initComponents();
         setExtendedState(JFrameAdminDataMapel.MAXIMIZED_BOTH);
         jPanelLihatMapel.setVisible(true);
         jPanelTambahMapel.setVisible(false);
+        LoadTable();
+        
+        Tbl_Admin_Data_Mapel.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        Tbl_Admin_Data_Mapel.getTableHeader().setOpaque(false);
+        Tbl_Admin_Data_Mapel.getTableHeader().setForeground(Color.BLACK);
+        Tbl_Admin_Data_Mapel.setRowHeight(25);
+    }
+    
+    private void LoadTable(){
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("No");
+        model.addColumn("Mata Pelajaran");
+        model.addColumn("Guru Pengajar");
+        
+        //menampilkan data database kedalam tabel
+        try {
+            int no = 1;
+            String sql = "SELECT * FROM tb_mapel";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+                while(res.next()){
+                    model.addRow(new Object[]{no++,
+                                            res.getString(2),
+                                            res.getString(3) });
+                }
+                Tbl_Admin_Data_Mapel.setModel(model);
+            } catch (Exception e) {
+        }
+    }
+    
+    private void ResetDataTambah () {
+        Txt_Tambah_Mapel.setText(null);
+        Txt_Tambah_Guru_Pengajar.setText(null);
+        
+    }
+    
+    private void ResetDataLihat () {
+        Txt_Lihat_Mapel.setText(null);
+        Txt_Lihat_Guru_Pengajar.setText(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -31,22 +85,23 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jPanelLihatMapel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Btn_Cari_Mapel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tbl_Admin_Data_Mapel = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Txt_Lihat_Mapel = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Txt_Lihat_Guru_Pengajar = new javax.swing.JTextField();
+        Btn_Hapus = new javax.swing.JButton();
+        Btn_Edit = new javax.swing.JButton();
+        Btn_Refresh = new javax.swing.JButton();
         jPanelTambahMapel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        Txt_Tambah_Mapel = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Txt_Tambah_Guru_Pengajar = new javax.swing.JTextField();
+        Btn_Reset = new javax.swing.JButton();
+        Btn_Simpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
@@ -122,7 +177,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Tambah Guru");
+        jLabel4.setText("Tambah Mapel");
 
         javax.swing.GroupLayout jPanelBarTambahMapelLayout = new javax.swing.GroupLayout(jPanelBarTambahMapel);
         jPanelBarTambahMapel.setLayout(jPanelBarTambahMapelLayout);
@@ -262,10 +317,10 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel5.setText("Cari Mapel");
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setText("Cari");
+        Btn_Cari_Mapel.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Cari_Mapel.setText("Cari");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tbl_Admin_Data_Mapel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -276,7 +331,12 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        Tbl_Admin_Data_Mapel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tbl_Admin_Data_MapelMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tbl_Admin_Data_Mapel);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel7.setText("Mata Pelajaran");
@@ -284,27 +344,46 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel8.setText("Guru Pengajar");
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton2.setText("Hapus");
+        Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Hapus.setText("Hapus");
+        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_HapusActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton3.setText("Edit");
+        Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Edit.setText("Edit");
+        Btn_Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_EditActionPerformed(evt);
+            }
+        });
+
+        Btn_Refresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Refresh.setText("Refresh");
+        Btn_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_RefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLihatMapelLayout = new javax.swing.GroupLayout(jPanelLihatMapel);
         jPanelLihatMapel.setLayout(jPanelLihatMapelLayout);
         jPanelLihatMapelLayout.setHorizontalGroup(
             jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
-                        .addGap(77, 77, 77)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(Btn_Cari_Mapel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Refresh))
                     .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
@@ -314,23 +393,24 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Txt_Lihat_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Txt_Lihat_Guru_Pengajar, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
                                 .addGap(133, 133, 133)
-                                .addComponent(jButton2)
+                                .addComponent(Btn_Hapus)
                                 .addGap(35, 35, 35)
-                                .addComponent(jButton3)))))
+                                .addComponent(Btn_Edit)))))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanelLihatMapelLayout.setVerticalGroup(
             jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(25, 25, 25)
                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Cari_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -339,16 +419,16 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_Lihat_Guru_Pengajar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanelTambahMapel.setBackground(new java.awt.Color(204, 204, 204));
@@ -359,11 +439,21 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel10.setText("Guru Pengajar");
 
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton4.setText("Reset");
+        Btn_Reset.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Reset.setText("Reset");
+        Btn_Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ResetActionPerformed(evt);
+            }
+        });
 
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton5.setText("Simpan");
+        Btn_Simpan.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        Btn_Simpan.setText("Simpan");
+        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_SimpanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelTambahMapelLayout = new javax.swing.GroupLayout(jPanelTambahMapel);
         jPanelTambahMapel.setLayout(jPanelTambahMapelLayout);
@@ -378,13 +468,13 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTambahMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Txt_Tambah_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txt_Tambah_Guru_Pengajar, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelTambahMapelLayout.createSequentialGroup()
                         .addGap(380, 380, 380)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Btn_Simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(216, Short.MAX_VALUE))
         );
         jPanelTambahMapelLayout.setVerticalGroup(
@@ -393,15 +483,15 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                 .addGap(139, 139, 139)
                 .addGroup(jPanelTambahMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelTambahMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_Tambah_Guru_Pengajar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(jPanelTambahMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(186, Short.MAX_VALUE))
         );
 
@@ -504,6 +594,54 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jPanelBarKembali.setBackground(new Color(26, 128, 179));
     }//GEN-LAST:event_jPanelBarKembaliMouseReleased
 
+    private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
+        try {
+            String sql = "INSERT INTO tb_mapel VALUES (default,'"+Txt_Tambah_Mapel.getText()+"','"+Txt_Tambah_Guru_Pengajar.getText()+"')";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_SimpanActionPerformed
+
+    private void Btn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ResetActionPerformed
+        ResetDataTambah();
+    }//GEN-LAST:event_Btn_ResetActionPerformed
+
+    private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        LoadTable();
+    }//GEN-LAST:event_Btn_RefreshActionPerformed
+
+    private void Tbl_Admin_Data_MapelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_MapelMouseClicked
+        int baris = Tbl_Admin_Data_Mapel.rowAtPoint(evt.getPoint());
+        String mapel = Tbl_Admin_Data_Mapel.getValueAt(baris, 1).toString();
+            Txt_Lihat_Mapel.setText(mapel);
+        String guru_pengajar = Tbl_Admin_Data_Mapel.getValueAt(baris,2).toString();
+            Txt_Lihat_Guru_Pengajar.setText(guru_pengajar);
+    }//GEN-LAST:event_Tbl_Admin_Data_MapelMouseClicked
+
+    private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
+
+    }//GEN-LAST:event_Btn_EditActionPerformed
+
+    private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+        try {
+            String sql ="DELETE FROM tb_mapel WHERE mapel ='"+Txt_Lihat_Mapel.getText()+"'";
+            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        LoadTable();
+        ResetDataLihat();
+    }//GEN-LAST:event_Btn_HapusActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -512,7 +650,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -540,11 +678,17 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton Btn_Cari_Mapel;
+    private javax.swing.JButton Btn_Edit;
+    private javax.swing.JButton Btn_Hapus;
+    private javax.swing.JButton Btn_Refresh;
+    private javax.swing.JButton Btn_Reset;
+    private javax.swing.JButton Btn_Simpan;
+    private javax.swing.JTable Tbl_Admin_Data_Mapel;
+    private javax.swing.JTextField Txt_Lihat_Guru_Pengajar;
+    private javax.swing.JTextField Txt_Lihat_Mapel;
+    private javax.swing.JTextField Txt_Tambah_Guru_Pengajar;
+    private javax.swing.JTextField Txt_Tambah_Mapel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -566,11 +710,6 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUtama;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

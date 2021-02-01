@@ -322,7 +322,6 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         Btn_Cari_Ruang.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Ruang.setText("Cari");
 
-        Tbl_Admin_Data_Kelas.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Tbl_Admin_Data_Kelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -669,7 +668,7 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
