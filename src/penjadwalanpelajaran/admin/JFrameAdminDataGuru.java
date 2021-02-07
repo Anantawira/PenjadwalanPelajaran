@@ -9,12 +9,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class JFrameAdminDataGuru extends javax.swing.JFrame {
-    
-        //deklarasi
-        Connection con;
-        Statement stat;
-        ResultSet rs;
-        String sql;
+
+    //deklarasi
+    Connection con;
+    Statement stat;
+    ResultSet rs;
+    String sql;
+    String selectedId;
 
     public JFrameAdminDataGuru() {
 
@@ -23,63 +24,65 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jPanelLihatGuru.setVisible(true);
         jPanelTambahGuru.setVisible(false);
         LoadTable();
-        
+
         Tbl_Admin_Data_Guru.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
         Tbl_Admin_Data_Guru.getTableHeader().setOpaque(false);
         Tbl_Admin_Data_Guru.getTableHeader().setForeground(Color.BLACK);
         Tbl_Admin_Data_Guru.setRowHeight(25);
     }
-    
-        private void LoadTable(){
+
+    private void LoadTable() {
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("No");
+        model.addColumn("ID");
         model.addColumn("NIP");
         model.addColumn("Nama");
         model.addColumn("Tgl Lahir");
         model.addColumn("Alamat");
         model.addColumn("No Telepon");
         model.addColumn("Bid Mapel");
-        
+
         //menampilkan data database kedalam tabel
         try {
-            int no=1;
+            int no = 1;
             String sql = "SELECT * FROM tb_guru";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
-                while(res.next()){
-                    model.addRow(new Object[]{no++,
-                                            res.getString(2),
-                                            res.getString(3),
-                                            res.getString(4),
-                                            res.getString(5),
-                                            res.getString(6),
-                                            res.getString(7)   });
-                }
-                Tbl_Admin_Data_Guru.setModel(model);
-            } catch (Exception e) {
+            while (res.next()) {
+                model.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                    res.getString(5),
+                    res.getString(6),
+                    res.getString(7)});
+            }
+            Tbl_Admin_Data_Guru.setModel(model);
+        } catch (Exception e) {
         }
     }
-    
-    private void ResetDataTambah () {
+
+    private void ResetDataTambah() {
         Txt_Tambah_NIP.setText(null);
         Txt_Tambah_Nama_Guru.setText(null);
         Txt_Tambah_Tgl_Lahir.setText(null);
         Txt_Tambah_Alamat.setText(null);
         Txt_Tambah_No_Telepon.setText(null);
         Txt_Tambah_Bid_Mapel.setText(null);
-        
+
     }
-    
-        private void ResetDataLihat () {
+
+    private void ResetDataLihat() {
         Txt_Lihat_NIP.setText(null);
         Txt_Lihat_Nama_Guru.setText(null);
         Txt_Lihat_Tgl_Lahir.setText(null);
         Txt_Lihat_Alamat.setText(null);
         Txt_Lihat_No_Telepon.setText(null);
         Txt_Lihat_Bid_Mapel.setText(null);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -397,6 +400,11 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Edit.setText("Edit");
+        Btn_Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_EditActionPerformed(evt);
+            }
+        });
 
         Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Hapus.setText("Hapus");
@@ -720,7 +728,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
     private void jPanelBarKembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseClicked
         this.dispose();
-            new JFrameBerandaAdmin().setVisible(true);
+        new JFrameBerandaAdmin().setVisible(true);
     }//GEN-LAST:event_jPanelBarKembaliMouseClicked
 
     private void jPanelBarKembaliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseEntered
@@ -769,15 +777,15 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
     private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         try {
-            String sql = "INSERT INTO tb_guru VALUES (default,'"+Txt_Tambah_NIP.getText()+"', '"+Txt_Tambah_Nama_Guru.getText()+"', '"+Txt_Tambah_Tgl_Lahir.getText()+"', '"+Txt_Tambah_Alamat.getText()+"', '"+Txt_Tambah_No_Telepon.getText()+"', '"+Txt_Tambah_Bid_Mapel.getText()+"')";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "INSERT INTO tb_guru VALUES (default,'" + Txt_Tambah_NIP.getText() + "', '" + Txt_Tambah_Nama_Guru.getText() + "', '" + Txt_Tambah_Tgl_Lahir.getText() + "', '" + Txt_Tambah_Alamat.getText() + "', '" + Txt_Tambah_No_Telepon.getText() + "', '" + Txt_Tambah_Bid_Mapel.getText() + "')";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        
+        LoadTable();
         ResetDataTambah();
     }//GEN-LAST:event_Btn_SimpanActionPerformed
 
@@ -791,8 +799,8 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         try {
-            String sql ="DELETE FROM tb_guru WHERE nip ='"+Txt_Lihat_NIP.getText()+"'";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "DELETE FROM tb_guru WHERE nip ='" + Txt_Lihat_NIP.getText() + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
@@ -805,19 +813,34 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
     private void Tbl_Admin_Data_GuruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_GuruMouseClicked
         int baris = Tbl_Admin_Data_Guru.rowAtPoint(evt.getPoint());
-        String NIP = Tbl_Admin_Data_Guru.getValueAt(baris, 1).toString();
-            Txt_Lihat_NIP.setText(NIP);
-        String nama_guru = Tbl_Admin_Data_Guru.getValueAt(baris,2).toString();
-            Txt_Lihat_Nama_Guru.setText(nama_guru);
-        String tgl_lahir = Tbl_Admin_Data_Guru.getValueAt(baris,3).toString();
-            Txt_Lihat_Tgl_Lahir.setText(tgl_lahir);
-        String alamat = Tbl_Admin_Data_Guru.getValueAt(baris,4).toString();
-            Txt_Lihat_Alamat.setText(alamat);
-        String no_telepon = Tbl_Admin_Data_Guru.getValueAt(baris,5).toString();
-            Txt_Lihat_No_Telepon.setText(no_telepon);
-        String bid_mapel = Tbl_Admin_Data_Guru.getValueAt(baris,6).toString();
-            Txt_Lihat_Bid_Mapel.setText(bid_mapel);
+        selectedId = Tbl_Admin_Data_Guru.getValueAt(baris, 1).toString();
+        String NIP = Tbl_Admin_Data_Guru.getValueAt(baris, 2).toString();
+        Txt_Lihat_NIP.setText(NIP);
+        String nama_guru = Tbl_Admin_Data_Guru.getValueAt(baris, 3).toString();
+        Txt_Lihat_Nama_Guru.setText(nama_guru);
+        String tgl_lahir = Tbl_Admin_Data_Guru.getValueAt(baris, 4).toString();
+        Txt_Lihat_Tgl_Lahir.setText(tgl_lahir);
+        String alamat = Tbl_Admin_Data_Guru.getValueAt(baris, 5).toString();
+        Txt_Lihat_Alamat.setText(alamat);
+        String no_telepon = Tbl_Admin_Data_Guru.getValueAt(baris, 6).toString();
+        Txt_Lihat_No_Telepon.setText(no_telepon);
+        String bid_mapel = Tbl_Admin_Data_Guru.getValueAt(baris, 7).toString();
+        Txt_Lihat_Bid_Mapel.setText(bid_mapel);
     }//GEN-LAST:event_Tbl_Admin_Data_GuruMouseClicked
+
+    private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
+        try {
+            String sql = "UPDATE tb_guru SET nip = '" + Txt_Lihat_NIP.getText() + "', nama_guru= '" + Txt_Lihat_Nama_Guru.getText() + "', tgl_lahir = '" + Txt_Lihat_Tgl_Lahir.getText() + "', alamat = '" + Txt_Lihat_Alamat.getText() + "', no_telepon = '" + Txt_Lihat_No_Telepon.getText() + "', bid_mapel = '" + Txt_Lihat_Bid_Mapel.getText() + "' WHERE id_guru = '" + selectedId + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Edit Data Gagal" + e.getMessage());
+        }
+        JOptionPane.showMessageDialog(null, "Data Berhasil diedit");
+        LoadTable();
+        ResetDataLihat();
+    }//GEN-LAST:event_Btn_EditActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

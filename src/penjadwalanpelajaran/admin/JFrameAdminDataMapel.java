@@ -15,54 +15,57 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     Statement stat;
     ResultSet rs;
     String sql;
-    
+    String selectedId;
+
     public JFrameAdminDataMapel() {
         initComponents();
         setExtendedState(JFrameAdminDataMapel.MAXIMIZED_BOTH);
         jPanelLihatMapel.setVisible(true);
         jPanelTambahMapel.setVisible(false);
         LoadTable();
-        
-        Tbl_Admin_Data_Mapel.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+
+        Tbl_Admin_Data_Mapel.getTableHeader().setFont(new Font("SEGOE UI", Font.BOLD, 12));
         Tbl_Admin_Data_Mapel.getTableHeader().setOpaque(false);
         Tbl_Admin_Data_Mapel.getTableHeader().setForeground(Color.BLACK);
         Tbl_Admin_Data_Mapel.setRowHeight(25);
     }
-    
-    private void LoadTable(){
+
+    private void LoadTable() {
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("No");
+        model.addColumn("ID");
         model.addColumn("Mata Pelajaran");
         model.addColumn("Guru Pengajar");
-        
+
         //menampilkan data database kedalam tabel
         try {
             int no = 1;
             String sql = "SELECT * FROM tb_mapel";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
-                while(res.next()){
-                    model.addRow(new Object[]{no++,
-                                            res.getString(2),
-                                            res.getString(3) });
-                }
-                Tbl_Admin_Data_Mapel.setModel(model);
-            } catch (Exception e) {
+            while (res.next()) {
+                model.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3)});
+            }
+            Tbl_Admin_Data_Mapel.setModel(model);
+        } catch (Exception e) {
         }
     }
-    
-    private void ResetDataTambah () {
+
+    private void ResetDataTambah() {
         Txt_Tambah_Mapel.setText(null);
         Txt_Tambah_Guru_Pengajar.setText(null);
-        
+
     }
-    
-    private void ResetDataLihat () {
+
+    private void ResetDataLihat() {
         Txt_Lihat_Mapel.setText(null);
         Txt_Lihat_Guru_Pengajar.setText(null);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -575,7 +578,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void jPanelBarKembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseClicked
         this.dispose();
-            new JFrameBerandaAdmin().setVisible(true);
+        new JFrameBerandaAdmin().setVisible(true);
     }//GEN-LAST:event_jPanelBarKembaliMouseClicked
 
     private void jPanelBarKembaliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseEntered
@@ -596,15 +599,15 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         try {
-            String sql = "INSERT INTO tb_mapel VALUES (default,'"+Txt_Tambah_Mapel.getText()+"','"+Txt_Tambah_Guru_Pengajar.getText()+"')";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "INSERT INTO tb_mapel VALUES (default,'" + Txt_Tambah_Mapel.getText() + "','" + Txt_Tambah_Guru_Pengajar.getText() + "')";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        
+        LoadTable();
         ResetDataTambah();
     }//GEN-LAST:event_Btn_SimpanActionPerformed
 
@@ -618,20 +621,31 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void Tbl_Admin_Data_MapelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_MapelMouseClicked
         int baris = Tbl_Admin_Data_Mapel.rowAtPoint(evt.getPoint());
-        String mapel = Tbl_Admin_Data_Mapel.getValueAt(baris, 1).toString();
-            Txt_Lihat_Mapel.setText(mapel);
-        String guru_pengajar = Tbl_Admin_Data_Mapel.getValueAt(baris,2).toString();
-            Txt_Lihat_Guru_Pengajar.setText(guru_pengajar);
+        selectedId = Tbl_Admin_Data_Mapel.getValueAt(baris, 1).toString();
+        String mapel = Tbl_Admin_Data_Mapel.getValueAt(baris, 2).toString();
+        Txt_Lihat_Mapel.setText(mapel);
+        String guru_pengajar = Tbl_Admin_Data_Mapel.getValueAt(baris, 3).toString();
+        Txt_Lihat_Guru_Pengajar.setText(guru_pengajar);
     }//GEN-LAST:event_Tbl_Admin_Data_MapelMouseClicked
 
     private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
-
+        try {
+            String sql = "UPDATE tb_mapel SET mapel = '" + Txt_Lihat_Mapel.getText() + "', guru_pengajar = '" + Txt_Lihat_Guru_Pengajar.getText() + "' WHERE id_mapel = '" + selectedId + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Edit Data Gagal" + e.getMessage());
+        }
+        JOptionPane.showMessageDialog(null, "Data Berhasil diedit");
+        LoadTable();
+        ResetDataLihat();
     }//GEN-LAST:event_Btn_EditActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         try {
-            String sql ="DELETE FROM tb_mapel WHERE mapel ='"+Txt_Lihat_Mapel.getText()+"'";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "DELETE FROM tb_mapel WHERE mapel ='" + Txt_Lihat_Mapel.getText() + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");

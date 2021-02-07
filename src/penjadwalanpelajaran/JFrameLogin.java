@@ -287,6 +287,7 @@ public class JFrameLogin extends javax.swing.JFrame {
             rs = stat.executeQuery(sql);
             if(rs.next()){
                 if(jTextField_Username.getText().equals(rs.getString("username")) && jPasswordField_Password.getText().equals(rs.getString("password"))){
+                    this.dispose();
                     new JFrameBerandaAdmin().setVisible(true);
                 }
             }else{

@@ -16,55 +16,58 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     Statement stat;
     ResultSet rs;
     String sql;
-    
+    String selectedId;
+
     public JFrameAdminDataKelas() {
         initComponents();
         setExtendedState(JFrameAdminDataKelas.MAXIMIZED_BOTH);
         jPanelLihatKelas.setVisible(true);
         jPanelTambahKelas.setVisible(false);
         LoadTable();
-        
+
         Tbl_Admin_Data_Kelas.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
         Tbl_Admin_Data_Kelas.getTableHeader().setOpaque(false);
         Tbl_Admin_Data_Kelas.getTableHeader().setForeground(Color.BLACK);
         Tbl_Admin_Data_Kelas.setRowHeight(25);
-        
+
     }
-    
-    private void LoadTable(){
+
+    private void LoadTable() {
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("No");
+        model.addColumn("ID");
         model.addColumn("Ruang Kelas");
         model.addColumn("Jurusan / Kelas");
-        
+
         //menampilkan data database kedalam tabel
         try {
-            int no=1;
-            String sql = "SELECT * FROM tb_kelas";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            int no = 1;
+            String sql = "SELECT * FROM tb_kelas ORDER BY ruang_kelas ASC";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
-                while(res.next()){
-                    model.addRow(new Object[]{no++,
-                                            res.getString(2),
-                                            res.getString(3) });
-                }
-                Tbl_Admin_Data_Kelas.setModel(model);
-            } catch (Exception e) {
+            while (res.next()) {
+                model.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3)});
+            }
+            Tbl_Admin_Data_Kelas.setModel(model);
+        } catch (Exception e) {
         }
     }
-    
-    private void ResetDataTambah () {
+
+    private void ResetDataTambah() {
         Txt_Tambah_Ruang_Kelas.setText(null);
         Txt_Tambah_Jurusan.setText(null);
-        
+
     }
-    
-    private void ResetDataLihat () {
+
+    private void ResetDataLihat() {
         Txt_Lihat_Ruang_Kelas.setText(null);
         Txt_Lihat_Jurusan.setText(null);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -333,6 +336,7 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tbl_Admin_Data_Kelas.setShowVerticalLines(false);
         Tbl_Admin_Data_Kelas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Tbl_Admin_Data_KelasMouseClicked(evt);
@@ -583,7 +587,7 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
 
     private void jPanelBarKembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseClicked
         this.dispose();
-            new JFrameBerandaAdmin().setVisible(true);
+        new JFrameBerandaAdmin().setVisible(true);
     }//GEN-LAST:event_jPanelBarKembaliMouseClicked
 
     private void jPanelBarKembaliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseEntered
@@ -604,15 +608,15 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
 
     private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         try {
-            String sql = "INSERT INTO tb_kelas VALUES (default,'"+Txt_Tambah_Ruang_Kelas.getText()+"','"+Txt_Tambah_Jurusan.getText()+"')";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "INSERT INTO tb_kelas VALUES (default,'" + Txt_Tambah_Ruang_Kelas.getText() + "','" + Txt_Tambah_Jurusan.getText() + "')";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        
+        LoadTable();
         ResetDataTambah();
     }//GEN-LAST:event_Btn_SimpanActionPerformed
 
@@ -622,22 +626,21 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
 
     private void Tbl_Admin_Data_KelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_Admin_Data_KelasMouseClicked
         int baris = Tbl_Admin_Data_Kelas.rowAtPoint(evt.getPoint());
-        String ruang_kelas = Tbl_Admin_Data_Kelas.getValueAt(baris, 1).toString();
-            Txt_Lihat_Ruang_Kelas.setText(ruang_kelas);
-        String jurusan = Tbl_Admin_Data_Kelas.getValueAt(baris,2).toString();
-            Txt_Lihat_Jurusan.setText(jurusan);
+        selectedId = Tbl_Admin_Data_Kelas.getValueAt(baris, 1).toString();
+        Txt_Lihat_Ruang_Kelas.setText(Tbl_Admin_Data_Kelas.getValueAt(baris, 2).toString());
+        Txt_Lihat_Jurusan.setText(Tbl_Admin_Data_Kelas.getValueAt(baris, 3).toString());
     }//GEN-LAST:event_Tbl_Admin_Data_KelasMouseClicked
 
     private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
         try {
-            String sql ="UPDATE tb_kelas SET ruang_kelas = '"+Txt_Lihat_Ruang_Kelas.getText()+"', jurusan = '"+Txt_Lihat_Jurusan.getText()+"' WHERE ruang_kelas = '"+Txt_Lihat_Ruang_Kelas.getText()+"'";
-            java.sql.Connection conn = (Connection)Config.configDB();
+            String sql = "UPDATE tb_kelas SET ruang_kelas = '" + Txt_Lihat_Ruang_Kelas.getText() + "', jurusan = '" + Txt_Lihat_Jurusan.getText() + "' WHERE id_kelas = '" + selectedId + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
-            JOptionPane.showMessageDialog(null, "Data Berhasil diedit");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Edit Data Gagal"+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Edit Data Gagal" + e.getMessage());
         }
+        JOptionPane.showMessageDialog(null, "Data Berhasil diedit");
         LoadTable();
         ResetDataLihat();
     }//GEN-LAST:event_Btn_EditActionPerformed
@@ -647,9 +650,9 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-         try {
-            String sql ="DELETE FROM tb_kelas WHERE ruang_kelas ='"+Txt_Lihat_Ruang_Kelas.getText()+"'";
-            java.sql.Connection conn = (Connection)Config.configDB();
+        try {
+            String sql = "DELETE FROM tb_kelas WHERE ruang_kelas ='" + Txt_Lihat_Ruang_Kelas.getText() + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
