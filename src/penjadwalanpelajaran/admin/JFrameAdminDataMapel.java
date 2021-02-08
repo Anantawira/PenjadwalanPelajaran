@@ -71,7 +71,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         Cmbx_Tambah_Guru_Pengajar.setSelectedIndex(0);
         Txt_Lihat_Kode_Guru.setText(null);
     }
-    
+
     public void ComboBoxTambahPengajar() {
         try {
             String sql = "SELECT nama_guru FROM tb_guru";
@@ -90,8 +90,8 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
-        public void ComboBoxLihatPengajar() {
+
+    public void ComboBoxLihatPengajar() {
         try {
             String sql = "SELECT nama_guru FROM tb_guru";
             java.sql.Connection conn = (Connection) Config.configDB();
@@ -129,7 +129,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jPanelUtama = new javax.swing.JPanel();
         jPanelLihatMapel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Txt_Cari_Mapel = new javax.swing.JTextField();
         Btn_Cari_Mapel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tbl_Admin_Data_Mapel = new javax.swing.JTable();
@@ -368,6 +368,11 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Cari_Mapel.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Mapel.setText("Cari");
+        Btn_Cari_Mapel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Cari_MapelActionPerformed(evt);
+            }
+        });
 
         Tbl_Admin_Data_Mapel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -431,7 +436,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                     .addGroup(jPanelLihatMapelLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Txt_Cari_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Btn_Cari_Mapel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -463,7 +468,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Cari_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn_Cari_Mapel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelLihatMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,7 +675,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         try {
-            String sql = "INSERT INTO tb_mapel VALUES (default,'" + Txt_Tambah_Mapel.getText() + "','" + Cmbx_Tambah_Guru_Pengajar.getSelectedItem()+ "','" + Txt_Tambah_Kode_Guru.getText()+"')";
+            String sql = "INSERT INTO tb_mapel VALUES (default,'" + Txt_Tambah_Mapel.getText() + "','" + Cmbx_Tambah_Guru_Pengajar.getSelectedItem() + "','" + Txt_Tambah_Kode_Guru.getText() + "')";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
@@ -703,7 +708,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void Btn_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EditActionPerformed
         try {
-            String sql = "UPDATE tb_mapel SET mapel = '" + Txt_Lihat_Mapel.getText() + "', nama_guru = '" + Cmbx_Lihat_Guru_Pengajar.getSelectedItem()+ "', kode_guru = '" + Txt_Lihat_Kode_Guru.getText()+ "' WHERE id_mapel = '" + selectedId + "'";
+            String sql = "UPDATE tb_mapel SET mapel = '" + Txt_Lihat_Mapel.getText() + "', nama_guru = '" + Cmbx_Lihat_Guru_Pengajar.getSelectedItem() + "', kode_guru = '" + Txt_Lihat_Kode_Guru.getText() + "' WHERE id_mapel = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
@@ -733,7 +738,34 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Cmbx_Tambah_Guru_PengajarActionPerformed
 
-    public static void main(String args[]) {
+    private void Btn_Cari_MapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_MapelActionPerformed
+        try {
+            Statement stat = (Statement) Config.configDB().createStatement();
+            ResultSet res = stat.executeQuery("SELECT * FROM tb_mapel WHERE " + " mapel LIKE '%" + Txt_Cari_Mapel.getText() + "%'");
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("No");
+            tbl.addColumn("ID");
+            tbl.addColumn("Mapel");
+            tbl.addColumn("Nama Guru");
+            tbl.addColumn("Kode Guru");
+
+            Tbl_Admin_Data_Mapel.setModel(tbl);
+            int no = 1;
+            while (res.next()) {
+                tbl.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                });
+                Tbl_Admin_Data_Mapel.setModel(tbl);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+    }//GEN-LAST:event_Btn_Cari_MapelActionPerformed
+
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -747,13 +779,33 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -778,6 +830,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Cmbx_Lihat_Guru_Pengajar;
     private javax.swing.JComboBox<String> Cmbx_Tambah_Guru_Pengajar;
     private javax.swing.JTable Tbl_Admin_Data_Mapel;
+    private javax.swing.JTextField Txt_Cari_Mapel;
     private javax.swing.JTextField Txt_Lihat_Kode_Guru;
     private javax.swing.JTextField Txt_Lihat_Mapel;
     private javax.swing.JTextField Txt_Tambah_Kode_Guru;
@@ -805,6 +858,5 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUtama;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

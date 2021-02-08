@@ -80,52 +80,56 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox6" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox7" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox8" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox9" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox10" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox11" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox12" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox13" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox14" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jComboBox15" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_1" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_2" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_3" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_4" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_5" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_6" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_7" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_8" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_9" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Cmbx_Kode_Guru_10" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextField1" max="32767" attributes="0"/>
-                      <Component id="jTextField2" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField3" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField4" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField5" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField6" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField7" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField8" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField9" pref="210" max="32767" attributes="0"/>
-                      <Component id="jTextField10" pref="210" max="32767" attributes="0"/>
-                      <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_1" pref="136" max="32767" attributes="0"/>
+                      <Component id="jLabel15" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_2" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_3" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_4" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_5" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_6" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_7" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_8" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_9" alignment="0" pref="136" max="32767" attributes="0"/>
+                      <Component id="Cmbx_Ruang_10" alignment="0" pref="136" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jTextField19" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField18" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField17" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField16" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField15" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField12" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField11" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel16" alignment="0" pref="175" max="32767" attributes="0"/>
-                      <Component id="jTextField20" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel16" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_1" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_4" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_5" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_6" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_7" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_9" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_8" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="Txt_Mapel_10" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="29" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jScrollPane1" pref="595" max="32767" attributes="0"/>
-                      <Component id="jLabel17" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
+                          <Component id="jLabel17" min="-2" pref="595" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
@@ -172,78 +176,79 @@
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField12" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField13" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField14" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField15" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField16" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel13" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox12" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField17" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox13" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField18" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel12" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox14" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField19" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel14" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jComboBox15" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextField20" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Mapel_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Ruang_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
@@ -307,12 +312,13 @@
         <Component class="javax.swing.JComboBox" name="Cmbx_Hari">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Senin"/>
-                <StringItem index="1" value="Selasa"/>
-                <StringItem index="2" value="Rabu"/>
-                <StringItem index="3" value="Kamis"/>
-                <StringItem index="4" value="Jumat"/>
+              <StringArray count="6">
+                <StringItem index="0" value="--Pilih Hari--"/>
+                <StringItem index="1" value="Senin"/>
+                <StringItem index="2" value="Selasa"/>
+                <StringItem index="3" value="Rabu"/>
+                <StringItem index="4" value="Kamis"/>
+                <StringItem index="5" value="Jumat"/>
               </StringArray>
             </Property>
           </Properties>
@@ -331,11 +337,8 @@
         <Component class="javax.swing.JComboBox" name="Cmbx_Kelas">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Jurusan--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -359,17 +362,17 @@
             <Property name="text" type="java.lang.String" value="Jam"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox6">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="Cmbx_Kode_Guru_1PopupMenuWillBecomeInvisible"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -446,14 +449,11 @@
             <Property name="text" type="java.lang.String" value="10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox7">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -461,14 +461,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox8">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_3">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -476,14 +473,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox9">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_4">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -491,14 +485,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox10">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_5">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -506,14 +497,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox11">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_6">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -521,14 +509,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox12">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_7">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -536,14 +521,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox13">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_8">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -551,14 +533,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox14">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_9">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -566,14 +545,11 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox15">
+        <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_10">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Kode Guru--"/>
               </StringArray>
             </Property>
           </Properties>
@@ -587,28 +563,8 @@
               <Font name="Century Gothic" size="15" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Nama Guru"/>
+            <Property name="text" type="java.lang.String" value="Ruangan"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
@@ -619,25 +575,25 @@
             <Property name="text" type="java.lang.String" value="Mata Pelajaran"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_1">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_2">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField13">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_3">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField14">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_4">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField15">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_5">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField16">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_6">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField17">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_7">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField18">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_8">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField19">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_9">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField20">
+        <Component class="javax.swing.JTextField" name="Txt_Mapel_10">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -646,7 +602,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="Tbl_Detail_Jadwal">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -726,6 +682,135 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonKembaliMouseClicked"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_2">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_3">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_4">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_5">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_6">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_7">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_8">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_9">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Cmbx_Ruang_10">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="--Pilih Ruangan--"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="15" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Kode Guru"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -324,6 +324,11 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
 
         Btn_Cari_Ruang.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Ruang.setText("Cari");
+        Btn_Cari_Ruang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Cari_RuangActionPerformed(evt);
+            }
+        });
 
         Tbl_Admin_Data_Kelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -662,6 +667,32 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         LoadTable();
         ResetDataLihat();
     }//GEN-LAST:event_Btn_HapusActionPerformed
+
+    private void Btn_Cari_RuangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_RuangActionPerformed
+        try {
+            Statement stat = (Statement) Config.configDB().createStatement();
+            ResultSet res = stat.executeQuery("SELECT * FROM tb_kelas WHERE " + " ruang_kelas LIKE '%" + Txt_Cari_Ruang.getText() + "%'");
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("No");
+            tbl.addColumn("ID");
+            tbl.addColumn("Ruang Kelas");
+            tbl.addColumn("Jurusan");
+
+            Tbl_Admin_Data_Kelas.setModel(tbl);
+            int no = 1;
+            while (res.next()) {
+                tbl.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+
+                });
+                Tbl_Admin_Data_Kelas.setModel(tbl);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+    }//GEN-LAST:event_Btn_Cari_RuangActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

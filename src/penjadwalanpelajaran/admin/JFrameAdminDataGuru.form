@@ -389,7 +389,7 @@
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="Txt_Cari_Guru" min="-2" pref="175" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Btn_Cari_Guru" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -442,8 +442,8 @@
                               <Component id="Btn_Refresh" min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel5" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="Btn_Cari_Guru" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="Txt_Cari_Guru" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="Btn_Cari_Guru" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -501,7 +501,7 @@
                     <Property name="text" type="java.lang.String" value="Nama Guru "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="Txt_Cari_Guru">
                 </Component>
                 <Component class="javax.swing.JButton" name="Btn_Cari_Guru">
                   <Properties>
@@ -510,6 +510,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cari"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Cari_GuruActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">
                   <AuxValues>

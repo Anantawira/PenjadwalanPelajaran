@@ -105,7 +105,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jPanelUtama = new javax.swing.JPanel();
         jPanelLihatGuru = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Txt_Cari_Guru = new javax.swing.JTextField();
         Btn_Cari_Guru = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tbl_Admin_Data_Guru = new javax.swing.JTable();
@@ -356,6 +356,11 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Cari_Guru.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Guru.setText("Cari");
+        Btn_Cari_Guru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Cari_GuruActionPerformed(evt);
+            }
+        });
 
         Tbl_Admin_Data_Guru.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -434,7 +439,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Txt_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Btn_Cari_Guru)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -476,8 +481,8 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                     .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Btn_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Txt_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addGroup(jPanelLihatGuruLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelLihatGuruLayout.createSequentialGroup()
@@ -843,6 +848,40 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         ResetDataLihat();
     }//GEN-LAST:event_Btn_EditActionPerformed
 
+    private void Btn_Cari_GuruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_GuruActionPerformed
+        try {
+            Statement stat = (Statement) Config.configDB().createStatement();
+            ResultSet res = stat.executeQuery("SELECT * FROM tb_guru WHERE " + " nama_guru LIKE '%" + Txt_Cari_Guru.getText() + "%'");
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("No");
+            tbl.addColumn("ID");
+            tbl.addColumn("NIP");
+            tbl.addColumn("Nama");
+            tbl.addColumn("Tempat Lahir");
+            tbl.addColumn("Tgl Lahir");
+            tbl.addColumn("Alamat");
+            tbl.addColumn("No Telepon");
+
+            Tbl_Admin_Data_Guru.setModel(tbl);
+            int no = 1;
+            while (res.next()) {
+                tbl.addRow(new Object[]{no++,
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                    res.getString(5),
+                    res.getString(6),
+                    res.getString(7)
+                });
+                Tbl_Admin_Data_Guru.setModel(tbl);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+
+    }//GEN-LAST:event_Btn_Cari_GuruActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -857,13 +896,17 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataGuru.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -884,6 +927,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Reset_Tambah;
     private javax.swing.JButton Btn_Simpan;
     private javax.swing.JTable Tbl_Admin_Data_Guru;
+    private javax.swing.JTextField Txt_Cari_Guru;
     private javax.swing.JTextField Txt_Lihat_Alamat;
     private javax.swing.JTextField Txt_Lihat_NIP;
     private javax.swing.JTextField Txt_Lihat_Nama_Guru;
@@ -925,6 +969,5 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUtama;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
