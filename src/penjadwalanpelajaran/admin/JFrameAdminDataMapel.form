@@ -403,17 +403,19 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel7" min="-2" pref="121" max="-2" attributes="0"/>
                                               <Component id="jLabel8" min="-2" pref="121" max="-2" attributes="0"/>
+                                              <Component id="jLabel12" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Txt_Lihat_Mapel" min="-2" pref="202" max="-2" attributes="0"/>
-                                              <Component id="Txt_Lihat_Guru_Pengajar" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="Txt_Lihat_Mapel" pref="202" max="32767" attributes="0"/>
+                                              <Component id="Txt_Lihat_Kode_Guru" pref="202" max="32767" attributes="0"/>
+                                              <Component id="Cmbx_Lihat_Guru_Pengajar" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                                           <Component id="Btn_Hapus" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                           <Component id="Btn_Edit" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -447,16 +449,21 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="Txt_Lihat_Guru_Pengajar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="Cmbx_Lihat_Guru_Pengajar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel12" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="Txt_Lihat_Kode_Guru" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="Btn_Hapus" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                       <Component id="Btn_Edit" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="30" max="32767" attributes="0"/>
+                          <EmptySpace pref="33" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -497,6 +504,7 @@
                             <Column editable="true" title="Title 4" type="java.lang.Object"/>
                           </Table>
                         </Property>
+                        <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tbl_Admin_Data_MapelMouseClicked"/>
@@ -521,8 +529,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Guru Pengajar"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="Txt_Lihat_Guru_Pengajar">
                 </Component>
                 <Component class="javax.swing.JButton" name="Btn_Hapus">
                   <Properties>
@@ -557,6 +563,26 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_RefreshActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="15" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Kode Guru"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Kode_Guru">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Cmbx_Lihat_Guru_Pengajar">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanelTambahMapel">
@@ -576,17 +602,19 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel10" min="-2" pref="158" max="-2" attributes="0"/>
                                       <Component id="jLabel9" min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" min="-2" pref="158" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Txt_Tambah_Mapel" min="-2" pref="280" max="-2" attributes="0"/>
-                                      <Component id="Txt_Tambah_Guru_Pengajar" min="-2" pref="280" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Txt_Tambah_Mapel" pref="280" max="32767" attributes="0"/>
+                                      <Component id="Txt_Tambah_Kode_Guru" alignment="0" pref="280" max="32767" attributes="0"/>
+                                      <Component id="Cmbx_Tambah_Guru_Pengajar" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
                                   <Component id="Btn_Reset" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                   <Component id="Btn_Simpan" min="-2" pref="85" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -597,22 +625,27 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                          <EmptySpace pref="144" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel9" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                               <Component id="Txt_Tambah_Mapel" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_Guru_Pengajar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="Cmbx_Tambah_Guru_Pengajar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Txt_Tambah_Kode_Guru" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="jLabel11" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Btn_Reset" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                               <Component id="Btn_Simpan" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="186" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -636,8 +669,6 @@
                     <Property name="text" type="java.lang.String" value="Guru Pengajar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="Txt_Tambah_Guru_Pengajar">
-                </Component>
                 <Component class="javax.swing.JButton" name="Btn_Reset">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -659,6 +690,29 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_SimpanActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Comic Sans MS" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Kode Guru"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Kode_Guru">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Cmbx_Tambah_Guru_Pengajar">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cmbx_Tambah_Guru_PengajarActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

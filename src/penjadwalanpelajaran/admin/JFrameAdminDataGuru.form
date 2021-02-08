@@ -398,7 +398,7 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" pref="468" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -406,10 +406,10 @@
                                                   <Component id="jLabel8" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                                                   <Component id="jLabel9" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                                                   <Component id="jLabel12" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                                  <Component id="jLabel11" alignment="1" min="-2" pref="108" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel7" min="-2" pref="110" max="-2" attributes="0"/>
                                               <Component id="jLabel10" min="-2" pref="110" max="-2" attributes="0"/>
+                                              <Component id="jLabel11" min="-2" pref="108" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -418,15 +418,14 @@
                                               <Component id="Txt_Lihat_Alamat" min="-2" pref="233" max="-2" attributes="0"/>
                                               <Component id="Txt_Lihat_Tgl_Lahir" min="-2" pref="233" max="-2" attributes="0"/>
                                               <Component id="Txt_Lihat_No_Telepon" min="-2" pref="233" max="-2" attributes="0"/>
-                                              <Component id="Txt_Lihat_Bid_Mapel" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="Txt_Lihat_Tempat_Lahir" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                                           <Component id="Btn_Hapus" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="Btn_Edit" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -448,12 +447,8 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="407" max="-2" attributes="0"/>
-                                  <EmptySpace pref="23" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel8" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="Txt_Lihat_NIP" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
@@ -464,33 +459,35 @@
                                       <Component id="Txt_Lihat_Nama_Guru" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Txt_Lihat_Tgl_Lahir" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel9" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="Txt_Lihat_Alamat" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel12" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="Txt_Lihat_No_Telepon" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Txt_Lihat_Tempat_Lahir" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="jLabel11" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="Txt_Lihat_Bid_Mapel" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Txt_Lihat_Tgl_Lahir" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Txt_Lihat_Alamat" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Txt_Lihat_No_Telepon" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="Btn_Edit" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                       <Component id="Btn_Hapus" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jScrollPane1" min="-2" pref="407" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="26" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -531,6 +528,7 @@
                             <Column editable="true" title="Title 4" type="java.lang.Object"/>
                           </Table>
                         </Property>
+                        <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tbl_Admin_Data_GuruMouseClicked"/>
@@ -575,7 +573,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="15" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Bid Mapel"/>
+                    <Property name="text" type="java.lang.String" value="Tmpt Lahir"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
@@ -599,7 +597,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Lihat_No_Telepon">
                 </Component>
-                <Component class="javax.swing.JTextField" name="Txt_Lihat_Bid_Mapel">
+                <Component class="javax.swing.JTextField" name="Txt_Lihat_Tempat_Lahir">
                 </Component>
                 <Component class="javax.swing.JButton" name="Btn_Edit">
                   <Properties>
@@ -655,22 +653,24 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="249" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel18" min="-2" pref="114" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" pref="114" max="-2" attributes="0"/>
-                              <Component id="jLabel19" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel18" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="jLabel15" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
                               <Component id="jLabel16" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="jLabel19" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Txt_Tambah_NIP" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_Bid_Mapel" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_No_Telepon" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="Txt_Tambah_No_Telepon" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                               <Component id="Txt_Tambah_Alamat" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_Tgl_Lahir" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_Nama_Guru" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="Txt_Tambah_Tempat_Lahir" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Txt_Tambah_NIP" alignment="0" pref="305" max="32767" attributes="0"/>
+                                  <Component id="Txt_Tambah_Tgl_Lahir" alignment="0" pref="305" max="32767" attributes="0"/>
+                                  <Component id="Txt_Tambah_Nama_Guru" alignment="0" pref="305" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
                       </Group>
@@ -689,10 +689,15 @@
                               <Component id="jLabel15" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="Txt_Tambah_Nama_Guru" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Txt_Tambah_Tempat_Lahir" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jLabel19" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel16" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="Txt_Tambah_Tgl_Lahir" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -701,20 +706,15 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel18" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="Txt_Tambah_No_Telepon" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jLabel18" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel19" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="Txt_Tambah_Bid_Mapel" min="-2" pref="38" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Btn_Reset_Tambah" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="Btn_Simpan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="72" max="32767" attributes="0"/>
+                          <EmptySpace pref="81" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -741,7 +741,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="17" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Tgl Lahir"/>
+                    <Property name="text" type="java.lang.String" value="Tanggal Lahir"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
@@ -765,7 +765,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Comic Sans MS" size="17" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Bidang Mapel"/>
+                    <Property name="text" type="java.lang.String" value="Tempat Lahir"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_NIP">
@@ -788,9 +788,9 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_No_TeleponActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="Txt_Tambah_Bid_Mapel">
+                <Component class="javax.swing.JTextField" name="Txt_Tambah_Tempat_Lahir">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Bid_MapelActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Tempat_LahirActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_Nama_Guru">
