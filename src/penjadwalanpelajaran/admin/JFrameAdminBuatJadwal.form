@@ -371,6 +371,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_1ItemStateChanged"/>
             <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="Cmbx_Kode_Guru_1PopupMenuWillBecomeInvisible"/>
           </Events>
           <AuxValues>

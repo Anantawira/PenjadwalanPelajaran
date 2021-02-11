@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -48,22 +49,6 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         Tbl_Detail_Jadwal.getTableHeader().setOpaque(false);
         Tbl_Detail_Jadwal.setForeground(Color.BLACK);
         Tbl_Detail_Jadwal.setRowHeight(25);
-    }
-
-    public void PilihComboBoxKodeGuru1() {
-        String item = (String) Cmbx_Kode_Guru_1.getSelectedItem();
-        String sql = "SELECT * FROM tb_mapel WHERE kode_guru=?";
-        try {
-            pst = con.prepareStatement(sql);
-            pst.setString(1, item);
-            rs = pst.executeQuery();
-
-            if (rs.next()) {
-                String add = rs.getString("nama_guru");
-                Txt_Mapel_1.setText(add);
-            }
-        } catch (Exception e) {
-        }
     }
 
     public void ComboBoxKelas() {
@@ -573,6 +558,11 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         jLabel5.setText("Jam");
 
         Cmbx_Kode_Guru_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Kode Guru--" }));
+        Cmbx_Kode_Guru_1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Cmbx_Kode_Guru_1ItemStateChanged(evt);
+            }
+        });
         Cmbx_Kode_Guru_1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -926,6 +916,25 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_Cmbx_Kode_Guru_1PopupMenuWillBecomeInvisible
+
+    private void Cmbx_Kode_Guru_1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Cmbx_Kode_Guru_1ItemStateChanged
+        try {
+            String kode_guru = evt.getItem().toString();
+            String sql = "SELECT * FROM tb_mapel WHERE kode_guru='" + kode_guru + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+
+            if (res.next()) {
+                String add = res.getString("mapel");
+                Txt_Mapel_1.setText(add);
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+    }//GEN-LAST:event_Cmbx_Kode_Guru_1ItemStateChanged
 
     /**
      * @param args the command line arguments
