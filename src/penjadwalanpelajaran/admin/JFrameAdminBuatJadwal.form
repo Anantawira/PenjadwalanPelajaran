@@ -51,100 +51,182 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel3" min="-2" pref="63" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="Cmbx_Kelas" min="-2" pref="136" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="Lbl_10" alignment="0" pref="35" max="32767" attributes="0"/>
+                              <Component id="Lbl_9" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_8" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lbl_3" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="Cmbx_Kode_Guru_9" alignment="0" pref="120" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_8" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_3" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_10" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="Cmbx_Ruang_9" alignment="0" pref="122" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_8" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_3" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_10" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="63" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel3" pref="49" max="32767" attributes="0"/>
+                              <Component id="jLabel1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Cmbx_Hari" min="-2" pref="136" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel4" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Cmbx_Kode_Guru_1" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_2" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_3" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_4" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_5" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_6" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_7" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_8" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_9" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="Cmbx_Kode_Guru_10" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="Cmbx_Kelas" min="-2" pref="136" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="Lbl_2" alignment="0" pref="35" max="32767" attributes="0"/>
+                              <Component id="Lbl_1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Cmbx_Kode_Guru_1" pref="120" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Kode_Guru_2" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Cmbx_Ruang_1" pref="122" max="32767" attributes="0"/>
+                              <Component id="Cmbx_Ruang_2" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel5" min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel18" min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="jLabel15" min="-2" pref="103" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Cmbx_Ruang_1" pref="136" max="32767" attributes="0"/>
-                      <Component id="jLabel15" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_2" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_3" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_4" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_5" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_6" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_7" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_8" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_9" alignment="0" pref="136" max="32767" attributes="0"/>
-                      <Component id="Cmbx_Ruang_10" alignment="0" pref="136" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel16" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_1" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_4" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_5" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_6" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_7" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_9" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_8" min="-2" pref="175" max="-2" attributes="0"/>
-                      <Component id="Txt_Mapel_10" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
-                          <Component id="jLabel17" min="-2" pref="595" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_10" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_10" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_10" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_9" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_9" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_9" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_8" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_8" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_8" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_7" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_7" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_7" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_6" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_6" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_6" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_5" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_5" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_5" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Txt_Mapel_4" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_4" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_4" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="Txt_Mapel_3" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_3" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_3" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="Txt_Mapel_2" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_2" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_2" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="Txt_Mapel_1" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Txt_Nama_Guru_1" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Btn_Simpan_1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="15" max="32767" attributes="0"/>
+                                  <Component id="jLabel17" min="-2" pref="595" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="538" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="jLabel19" min="-2" pref="101" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                   <Component id="jButtonKembali" min="-2" pref="87" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="87" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="87" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                  <Component id="Btn_Hapus" min="-2" pref="72" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="Btn_Reset_Table" min="-2" pref="72" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -153,10 +235,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Cmbx_Hari" pref="27" max="32767" attributes="0"/>
-                      <Component id="jLabel1" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Cmbx_Hari" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -177,91 +259,110 @@
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel13" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_7" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_8" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel14" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Lbl_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Kode_Guru_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Txt_Mapel_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="Cmbx_Ruang_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Btn_Simpan_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="Txt_Nama_Guru_10" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="Btn_Reset_Table" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jButtonKembali" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="Btn_Hapus" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="104" max="32767" attributes="0"/>
+                  <EmptySpace pref="106" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -346,7 +447,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="Lbl_1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -359,7 +460,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Jam"/>
+            <Property name="text" type="java.lang.String" value="Sesi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="Cmbx_Kode_Guru_1">
@@ -372,13 +473,12 @@
           </Properties>
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_1ItemStateChanged"/>
-            <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="Cmbx_Kode_Guru_1PopupMenuWillBecomeInvisible"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="Lbl_5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -386,7 +486,7 @@
             <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="Lbl_6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -394,7 +494,7 @@
             <Property name="text" type="java.lang.String" value="6"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="Lbl_4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -402,7 +502,7 @@
             <Property name="text" type="java.lang.String" value="4"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="Lbl_8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -410,7 +510,7 @@
             <Property name="text" type="java.lang.String" value="8"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="Lbl_3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -418,7 +518,7 @@
             <Property name="text" type="java.lang.String" value="3"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="Lbl_2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -426,7 +526,7 @@
             <Property name="text" type="java.lang.String" value="2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="Lbl_9">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -434,7 +534,7 @@
             <Property name="text" type="java.lang.String" value="9"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="Lbl_7">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -442,7 +542,7 @@
             <Property name="text" type="java.lang.String" value="7"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="Lbl_10">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="15" style="1"/>
@@ -458,6 +558,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_2ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -470,6 +573,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_3ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -482,6 +588,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_4ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -494,6 +603,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_5ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -506,6 +618,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_6ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -518,6 +633,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_7ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -530,6 +648,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_8ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -542,6 +663,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_9ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -554,6 +678,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Cmbx_Kode_Guru_10ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -606,11 +733,12 @@
             <Component class="javax.swing.JTable" name="Tbl_Detail_Jadwal">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="5" rowCount="5">
+                    <Column editable="true" title="Sesi" type="java.lang.Object"/>
+                    <Column editable="true" title="Ruang" type="java.lang.Object"/>
+                    <Column editable="true" title="Mata Pelajaran" type="java.lang.Object"/>
+                    <Column editable="true" title="Guru Pengajar" type="java.lang.Object"/>
+                    <Column editable="true" title="Kode Guru" type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>
@@ -626,7 +754,7 @@
             <Property name="text" type="java.lang.String" value="Detail Jadwal Pelajaran"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="Btn_Reset_Table">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="12" style="1"/>
@@ -636,8 +764,11 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Reset_TableActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="Btn_Simpan_1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="12" style="1"/>
@@ -647,28 +778,9 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century Gothic" size="12" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Hapus"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century Gothic" size="12" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Terapkan"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonKembali">
           <Properties>
@@ -812,6 +924,175 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Kode Guru"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_7">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_7ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_8ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_9">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_9ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Simpan_10">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Simpan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Simpan_10ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_1">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_2">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_3">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_4">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_5">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_6">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_7">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_8">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_9">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Txt_Nama_Guru_10">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="15" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Guru"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btn_Hapus">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hapus"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_HapusActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
