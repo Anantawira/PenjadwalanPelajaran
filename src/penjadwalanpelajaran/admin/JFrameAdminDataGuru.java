@@ -46,7 +46,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         //menampilkan data database kedalam tabel
         try {
             int no = 1;
-            String sql = "SELECT * FROM tb_guru";
+            String sql = "SELECT * FROM tb_guru ORDER BY nama_guru ASC";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
@@ -73,7 +73,6 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         Txt_Tambah_Alamat.setText(null);
         Txt_Tambah_No_Telepon.setText(null);
         Txt_Tambah_Tempat_Lahir.setText(null);
-
     }
 
     private void ResetDataLihat() {
@@ -83,7 +82,10 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         Txt_Lihat_Alamat.setText(null);
         Txt_Lihat_No_Telepon.setText(null);
         Txt_Lihat_Tempat_Lahir.setText(null);
-
+    }
+    
+    private void ResetCari() {
+        Txt_Cari_Guru.setText(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -399,6 +401,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel12.setText("No Telepon");
 
+        Txt_Lihat_NIP.setEditable(false);
         Txt_Lihat_NIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Txt_Lihat_NIPActionPerformed(evt);
@@ -800,12 +803,13 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Reset_TambahActionPerformed
 
     private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        ResetCari();
         LoadTable();
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         try {
-            String sql = "DELETE FROM tb_guru WHERE nip ='" + Txt_Lihat_NIP.getText() + "'";
+            String sql = "DELETE FROM tb_guru WHERE id_guru = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();

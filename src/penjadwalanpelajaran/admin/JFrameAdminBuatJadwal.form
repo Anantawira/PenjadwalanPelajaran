@@ -733,7 +733,7 @@
             <Component class="javax.swing.JTable" name="Tbl_Detail_Jadwal">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="5">
+                  <Table columnCount="5" rowCount="0">
                     <Column editable="true" title="Sesi" type="java.lang.Object"/>
                     <Column editable="true" title="Ruang" type="java.lang.Object"/>
                     <Column editable="true" title="Mata Pelajaran" type="java.lang.Object"/>

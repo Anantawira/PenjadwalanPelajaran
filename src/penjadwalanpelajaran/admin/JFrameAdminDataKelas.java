@@ -69,6 +69,10 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
         Txt_Lihat_Jurusan.setText(null);
 
     }
+    
+    private void ResetCari() {
+        Txt_Cari_Ruang.setText(null);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -651,12 +655,13 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_EditActionPerformed
 
     private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        ResetCari();
         LoadTable();
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         try {
-            String sql = "DELETE FROM tb_kelas WHERE ruang_kelas ='" + Txt_Lihat_Ruang_Kelas.getText() + "'";
+            String sql = "DELETE FROM tb_kelas WHERE id_kelas = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();

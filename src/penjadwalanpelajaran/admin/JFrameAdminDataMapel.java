@@ -44,7 +44,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         //menampilkan data database kedalam tabel
         try {
             int no = 1;
-            String sql = "SELECT * FROM tb_mapel";
+            String sql = "SELECT * FROM tb_mapel ORDER BY mapel ASC";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
@@ -70,6 +70,10 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         Txt_Lihat_Mapel.setText(null);
         Cmbx_Tambah_Guru_Pengajar.setSelectedIndex(0);
         Txt_Lihat_Kode_Guru.setText(null);
+    }
+    
+    private void ResetCari() {
+        Txt_Cari_Mapel.setText(null);
     }
 
     public void ComboBoxTambahPengajar() {
@@ -426,6 +430,8 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel12.setText("Kode Guru");
 
+        Cmbx_Lihat_Guru_Pengajar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Guru Pengajar--" }));
+
         javax.swing.GroupLayout jPanelLihatMapelLayout = new javax.swing.GroupLayout(jPanelLihatMapel);
         jPanelLihatMapel.setLayout(jPanelLihatMapelLayout);
         jPanelLihatMapelLayout.setHorizontalGroup(
@@ -522,11 +528,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel11.setText("Kode Guru");
 
-        Cmbx_Tambah_Guru_Pengajar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cmbx_Tambah_Guru_PengajarActionPerformed(evt);
-            }
-        });
+        Cmbx_Tambah_Guru_Pengajar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Guru Pengajar--" }));
 
         javax.swing.GroupLayout jPanelTambahMapelLayout = new javax.swing.GroupLayout(jPanelTambahMapel);
         jPanelTambahMapel.setLayout(jPanelTambahMapelLayout);
@@ -692,6 +694,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_ResetActionPerformed
 
     private void Btn_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RefreshActionPerformed
+        ResetCari();
         LoadTable();
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
@@ -722,7 +725,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         try {
-            String sql = "DELETE FROM tb_mapel WHERE kode_guru ='" + Txt_Lihat_Kode_Guru.getText() + "'";
+            String sql = "DELETE FROM tb_mapel WHERE id_mapel = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
@@ -733,10 +736,6 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         LoadTable();
         ResetDataLihat();
     }//GEN-LAST:event_Btn_HapusActionPerformed
-
-    private void Cmbx_Tambah_Guru_PengajarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cmbx_Tambah_Guru_PengajarActionPerformed
-
-    }//GEN-LAST:event_Cmbx_Tambah_Guru_PengajarActionPerformed
 
     private void Btn_Cari_MapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_MapelActionPerformed
         try {

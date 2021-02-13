@@ -579,7 +579,9 @@
                 <Component class="javax.swing.JComboBox" name="Cmbx_Lihat_Guru_Pengajar">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="--Pilih Guru Pengajar--"/>
+                      </StringArray>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -707,12 +709,11 @@
                 <Component class="javax.swing.JComboBox" name="Cmbx_Tambah_Guru_Pengajar">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="--Pilih Guru Pengajar--"/>
+                      </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cmbx_Tambah_Guru_PengajarActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
