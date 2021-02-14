@@ -71,7 +71,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         Cmbx_Tambah_Guru_Pengajar.setSelectedIndex(0);
         Txt_Lihat_Kode_Guru.setText(null);
     }
-    
+
     private void ResetCari() {
         Txt_Cari_Mapel.setText(null);
     }
@@ -724,6 +724,8 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_EditActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0)
         try {
             String sql = "DELETE FROM tb_mapel WHERE id_mapel = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();
@@ -755,8 +757,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
                     res.getString(1),
                     res.getString(2),
                     res.getString(3),
-                    res.getString(4),
-                });
+                    res.getString(4),});
                 Tbl_Admin_Data_Mapel.setModel(tbl);
             }
         } catch (Exception e) {
@@ -764,7 +765,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Btn_Cari_MapelActionPerformed
 
-public static void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -778,33 +779,17 @@ public static void main(String args[]) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAdminDataMapel
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAdminDataMapel.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

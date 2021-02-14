@@ -1422,13 +1422,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_1.getText(),
-                                    Cmbx_Ruang_1.getSelectedItem(),
-                                    Txt_Mapel_1.getText(),
-                                    Txt_Nama_Guru_1.getText(),
-                                    Cmbx_Kode_Guru_1.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_1.getText(),
+            Cmbx_Ruang_1.getSelectedItem(),
+            Txt_Mapel_1.getText(),
+            Txt_Nama_Guru_1.getText(),
+            Cmbx_Kode_Guru_1.getSelectedItem()});
         ResetData1();
     }//GEN-LAST:event_Btn_Simpan_1ActionPerformed
 
@@ -1442,13 +1442,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_2.getText(),
-                                    Cmbx_Ruang_2.getSelectedItem(),
-                                    Txt_Mapel_2.getText(),
-                                    Txt_Nama_Guru_2.getText(),
-                                    Cmbx_Kode_Guru_2.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_2.getText(),
+            Cmbx_Ruang_2.getSelectedItem(),
+            Txt_Mapel_2.getText(),
+            Txt_Nama_Guru_2.getText(),
+            Cmbx_Kode_Guru_2.getSelectedItem()});
         ResetData2();
     }//GEN-LAST:event_Btn_Simpan_2ActionPerformed
 
@@ -1462,13 +1462,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_3.getText(),
-                                    Cmbx_Ruang_3.getSelectedItem(),
-                                    Txt_Mapel_3.getText(),
-                                    Txt_Nama_Guru_3.getText(),
-                                    Cmbx_Kode_Guru_3.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_3.getText(),
+            Cmbx_Ruang_3.getSelectedItem(),
+            Txt_Mapel_3.getText(),
+            Txt_Nama_Guru_3.getText(),
+            Cmbx_Kode_Guru_3.getSelectedItem()});
         ResetData3();
     }//GEN-LAST:event_Btn_Simpan_3ActionPerformed
 
@@ -1482,13 +1482,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_4.getText(),
-                                    Cmbx_Ruang_4.getSelectedItem(),
-                                    Txt_Mapel_4.getText(),
-                                    Txt_Nama_Guru_4.getText(),
-                                    Cmbx_Kode_Guru_4.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_4.getText(),
+            Cmbx_Ruang_4.getSelectedItem(),
+            Txt_Mapel_4.getText(),
+            Txt_Nama_Guru_4.getText(),
+            Cmbx_Kode_Guru_4.getSelectedItem()});
         ResetData4();
     }//GEN-LAST:event_Btn_Simpan_4ActionPerformed
 
@@ -1502,13 +1502,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_5.getText(),
-                                    Cmbx_Ruang_5.getSelectedItem(),
-                                    Txt_Mapel_5.getText(),
-                                    Txt_Nama_Guru_5.getText(),
-                                    Cmbx_Kode_Guru_5.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_5.getText(),
+            Cmbx_Ruang_5.getSelectedItem(),
+            Txt_Mapel_5.getText(),
+            Txt_Nama_Guru_5.getText(),
+            Cmbx_Kode_Guru_5.getSelectedItem()});
         ResetData5();
     }//GEN-LAST:event_Btn_Simpan_5ActionPerformed
 
@@ -1522,13 +1522,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_6.getText(),
-                                    Cmbx_Ruang_6.getSelectedItem(),
-                                    Txt_Mapel_6.getText(),
-                                    Txt_Nama_Guru_6.getText(),
-                                    Cmbx_Kode_Guru_6.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_6.getText(),
+            Cmbx_Ruang_6.getSelectedItem(),
+            Txt_Mapel_6.getText(),
+            Txt_Nama_Guru_6.getText(),
+            Cmbx_Kode_Guru_6.getSelectedItem()});
         ResetData6();
     }//GEN-LAST:event_Btn_Simpan_6ActionPerformed
 
@@ -1542,13 +1542,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_7.getText(),
-                                    Cmbx_Ruang_7.getSelectedItem(),
-                                    Txt_Mapel_7.getText(),
-                                    Txt_Nama_Guru_7.getText(),
-                                    Cmbx_Kode_Guru_7.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_7.getText(),
+            Cmbx_Ruang_7.getSelectedItem(),
+            Txt_Mapel_7.getText(),
+            Txt_Nama_Guru_7.getText(),
+            Cmbx_Kode_Guru_7.getSelectedItem()});
         ResetData7();
     }//GEN-LAST:event_Btn_Simpan_7ActionPerformed
 
@@ -1562,13 +1562,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_8.getText(),
-                                    Cmbx_Ruang_8.getSelectedItem(),
-                                    Txt_Mapel_8.getText(),
-                                    Txt_Nama_Guru_8.getText(),
-                                    Cmbx_Kode_Guru_8.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_8.getText(),
+            Cmbx_Ruang_8.getSelectedItem(),
+            Txt_Mapel_8.getText(),
+            Txt_Nama_Guru_8.getText(),
+            Cmbx_Kode_Guru_8.getSelectedItem()});
         ResetData8();
     }//GEN-LAST:event_Btn_Simpan_8ActionPerformed
 
@@ -1582,13 +1582,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_9.getText(),
-                                    Cmbx_Ruang_9.getSelectedItem(),
-                                    Txt_Mapel_9.getText(),
-                                    Txt_Nama_Guru_9.getText(),
-                                    Cmbx_Kode_Guru_9.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_9.getText(),
+            Cmbx_Ruang_9.getSelectedItem(),
+            Txt_Mapel_9.getText(),
+            Txt_Nama_Guru_9.getText(),
+            Cmbx_Kode_Guru_9.getSelectedItem()});
         ResetData9();
     }//GEN-LAST:event_Btn_Simpan_9ActionPerformed
 
@@ -1602,13 +1602,13 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-            DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-            model.addRow(new Object[]{
-                                    Lbl_10.getText(),
-                                    Cmbx_Ruang_10.getSelectedItem(),
-                                    Txt_Mapel_10.getText(),
-                                    Txt_Nama_Guru_10.getText(),
-                                    Cmbx_Kode_Guru_10.getSelectedItem()});
+        DefaultTableModel model = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+        model.addRow(new Object[]{
+            Lbl_10.getText(),
+            Cmbx_Ruang_10.getSelectedItem(),
+            Txt_Mapel_10.getText(),
+            Txt_Nama_Guru_10.getText(),
+            Cmbx_Kode_Guru_10.getSelectedItem()});
         ResetData10();
     }//GEN-LAST:event_Btn_Simpan_10ActionPerformed
 
@@ -1620,7 +1620,17 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Reset_TableActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        // TODO add your handling code here:
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (ok == 0) {
+            try {
+                String sql = "DELETE * FROM tb_jadwal_mapel WHERE id_jadwal_mapel = '" + selectedId + "'";
+                PreparedStatement st = con.prepareStatement(sql);
+                st.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Anda Berhasil Menghapus");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Anda Gagal Menghapus");
+            }
+        }
     }//GEN-LAST:event_Btn_HapusActionPerformed
 
     /**

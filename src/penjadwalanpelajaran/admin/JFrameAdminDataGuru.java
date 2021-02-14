@@ -83,7 +83,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         Txt_Lihat_No_Telepon.setText(null);
         Txt_Lihat_Tempat_Lahir.setText(null);
     }
-    
+
     private void ResetCari() {
         Txt_Cari_Guru.setText(null);
     }
@@ -808,6 +808,8 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0)
         try {
             String sql = "DELETE FROM tb_guru WHERE id_guru = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();

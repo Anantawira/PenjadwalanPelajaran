@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import penjadwalanpelajaran.JFrameBeranda;
 
 public class JFrameBerandaAdmin extends javax.swing.JFrame {
@@ -13,40 +14,40 @@ public class JFrameBerandaAdmin extends javax.swing.JFrame {
     public JFrameBerandaAdmin() {
         initComponents();
         setExtendedState(JFrameBerandaAdmin.MAXIMIZED_BOTH);
-        
+
         tanggal_waktu_sekarang();
     }
-    
-    public void tanggal_waktu_sekarang(){
-        Thread p=new Thread(){
-            public void run(){
-                for(;;){
+
+    public void tanggal_waktu_sekarang() {
+        Thread p = new Thread() {
+            public void run() {
+                for (;;) {
                     Calendar cal = new GregorianCalendar();
                     int hari = cal.get(Calendar.DAY_OF_MONTH);
                     int bulan = cal.get(Calendar.MONTH);
                     int tahun = cal.get(Calendar.YEAR);
-                    jLabelTanggal.setText(hari+"/"+(bulan+1)+"/"+tahun);
-                    
+                    jLabelTanggal.setText(hari + "/" + (bulan + 1) + "/" + tahun);
+
                     int jam = cal.get(Calendar.HOUR);
                     int menit = cal.get(Calendar.MINUTE);
                     int detik = cal.get(Calendar.SECOND);
                     int AM_PM = cal.get(Calendar.AM_PM);
-                    
+
                     String day_night = "";
-                        if (AM_PM == 1){
-                            day_night = "PM";
-                        } else {
-                            day_night = "AM";                         
-                        }
-                        
+                    if (AM_PM == 1) {
+                        day_night = "PM";
+                    } else {
+                        day_night = "AM";
+                    }
+
                     String waktuu = jam + ":" + menit + ":" + detik + " " + day_night;
                     jLabelWaktu.setText(waktuu);
-                    
+
                     try {
                         sleep(1000);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(JFrameBeranda.class.getName()).log(Level.SEVERE, null, ex);
-                    }               
+                    }
                 }
             }
         };
@@ -520,28 +521,31 @@ public class JFrameBerandaAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogOutMouseClicked
-        this.dispose();
-        new penjadwalanpelajaran.JFrameBeranda().setVisible(true);
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Yakin Keluar Aplikasi??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0) {
+            dispose();
+             new penjadwalanpelajaran.JFrameBeranda().setVisible(true);
+        }
     }//GEN-LAST:event_jLabelLogOutMouseClicked
 
     private void jPanelLihatJadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelLihatJadwalMouseClicked
         this.dispose();
-            new JFrameLihatMapel().setVisible(true);
+        new JFrameLihatMapel().setVisible(true);
     }//GEN-LAST:event_jPanelLihatJadwalMouseClicked
 
     private void jPanelDataKelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDataKelasMouseClicked
         this.dispose();
-            new JFrameAdminDataKelas().setVisible(true);
+        new JFrameAdminDataKelas().setVisible(true);
     }//GEN-LAST:event_jPanelDataKelasMouseClicked
 
     private void jPanelDataGuruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDataGuruMouseClicked
         this.dispose();
-            new JFrameAdminDataGuru().setVisible(true);
+        new JFrameAdminDataGuru().setVisible(true);
     }//GEN-LAST:event_jPanelDataGuruMouseClicked
 
     private void jPanelDataMapelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDataMapelMouseClicked
         this.dispose();
-            new JFrameAdminDataMapel().setVisible(true);
+        new JFrameAdminDataMapel().setVisible(true);
     }//GEN-LAST:event_jPanelDataMapelMouseClicked
 
     private void jPanelLihatJadwalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelLihatJadwalMouseEntered
@@ -562,7 +566,7 @@ public class JFrameBerandaAdmin extends javax.swing.JFrame {
 
     private void jPanelBuatJadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBuatJadwalMouseClicked
         this.dispose();
-            new JFrameAdminBuatJadwal().setVisible(true);
+        new JFrameAdminBuatJadwal().setVisible(true);
     }//GEN-LAST:event_jPanelBuatJadwalMouseClicked
 
     private void jPanelBuatJadwalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBuatJadwalMouseEntered

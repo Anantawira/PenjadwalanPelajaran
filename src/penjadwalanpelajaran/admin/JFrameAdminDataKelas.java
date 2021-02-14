@@ -660,6 +660,8 @@ public class JFrameAdminDataKelas extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_RefreshActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0)
         try {
             String sql = "DELETE FROM tb_kelas WHERE id_kelas = '" + selectedId + "'";
             java.sql.Connection conn = (Connection) Config.configDB();

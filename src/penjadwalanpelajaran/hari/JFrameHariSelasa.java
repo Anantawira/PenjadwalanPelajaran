@@ -2,17 +2,54 @@ package penjadwalanpelajaran.hari;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import penjadwalanpelajaran.admin.Config;
 
 public class JFrameHariSelasa extends javax.swing.JFrame {
 
     public JFrameHariSelasa() {
         initComponents();
         setExtendedState(JFrameHariSelasa.MAXIMIZED_BOTH);
-        
-        jTableHariSelasa.getTableHeader().setFont(new Font("Roboto", Font.BOLD, 12));
+        LoadTable();
+
+        jTableHariSelasa.getTableHeader().setFont(new Font("SEGOE UI", Font.BOLD, 12));
         jTableHariSelasa.getTableHeader().setOpaque(false);
         jTableHariSelasa.getTableHeader().setForeground(Color.BLACK);
         jTableHariSelasa.setRowHeight(25);
+    }
+
+    private void LoadTable() {
+        // membuat tampilan model tabel
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Guru Pengajar");
+        model.addColumn("Sesi");
+        model.addColumn("Mata Pelajaran");
+        model.addColumn("Ruang");
+        model.addColumn("Kode Guru");
+
+        //menampilkan data database kedalam tabel
+        try {
+            //int no = 1;
+            String sql = "SELECT * FROM tb_jadwal_mapel WHERE " + " hari LIKE '%" + "Selasa" + "%' ORDER BY nama_guru ASC ";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            while (res.next()) {
+                model.addRow(new Object[]{
+                    res.getString(6),
+                    res.getString(4),
+                    res.getString(7),
+                    res.getString(8),
+                    res.getString(5)
+                });
+            }
+            jTableHariSelasa.setModel(model);
+        } catch (Exception e) {
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -24,11 +61,12 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabelBtnBack = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        Txt_Cari_Guru = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Btn_Cari_Guru = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHariSelasa = new javax.swing.JTable();
+        Btn_Refresh_Cari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,23 +112,17 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nama Guru :");
 
-        jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton1.setText("Cari");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Cari_Guru.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Btn_Cari_Guru.setText("Cari");
+        Btn_Cari_Guru.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Cari_Guru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Cari_Guru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Btn_Cari_GuruActionPerformed(evt);
             }
         });
 
@@ -105,7 +137,18 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableHariSelasa.setShowVerticalLines(false);
         jScrollPane1.setViewportView(jTableHariSelasa);
+
+        Btn_Refresh_Cari.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Btn_Refresh_Cari.setText("Refresh");
+        Btn_Refresh_Cari.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Refresh_Cari.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Refresh_Cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Refresh_CariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -118,9 +161,11 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Txt_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Btn_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Refresh_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -128,9 +173,10 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Cari_Guru, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Refresh_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -170,18 +216,43 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void Btn_Cari_GuruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_GuruActionPerformed
+        try {
+            Statement stat = (Statement) Config.configDB().createStatement();
+            ResultSet res = stat.executeQuery("SELECT * FROM tb_jadwal_mapel WHERE " + " nama_guru LIKE '%" + Txt_Cari_Guru.getText() + "%' AND " + " hari LIKE '%" + "Selasa" + "%' ");
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Guru Pengajar");
+            model.addColumn("Sesi");
+            model.addColumn("Mata Pelajaran");
+            model.addColumn("Ruang");
+            model.addColumn("Kode Guru");
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+            jTableHariSelasa.setModel(model);
+            int no = 1;
+            while (res.next()) {
+                model.addRow(new Object[]{
+                    res.getString(6),
+                    res.getString(4),
+                    res.getString(7),
+                    res.getString(8),
+                    res.getString(5)
+                });
+                jTableHariSelasa.setModel(model);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+    }//GEN-LAST:event_Btn_Cari_GuruActionPerformed
 
     private void jLabelBtnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBtnBackMouseClicked
         this.dispose();
         new penjadwalanpelajaran.JFrameBeranda().setVisible(true);
     }//GEN-LAST:event_jLabelBtnBackMouseClicked
+
+    private void Btn_Refresh_CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Refresh_CariActionPerformed
+        LoadTable();
+        Txt_Cari_Guru.setText(null);
+    }//GEN-LAST:event_Btn_Refresh_CariActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -216,7 +287,9 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Btn_Cari_Guru;
+    private javax.swing.JButton Btn_Refresh_Cari;
+    private javax.swing.JTextField Txt_Cari_Guru;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelBtnBack;
@@ -225,6 +298,5 @@ public class JFrameHariSelasa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableHariSelasa;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
