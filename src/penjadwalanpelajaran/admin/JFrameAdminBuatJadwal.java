@@ -1613,14 +1613,17 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Simpan_10ActionPerformed
 
     private void Btn_Reset_TableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_TableActionPerformed
-        DefaultTableModel dm = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
-        while (dm.getRowCount() > 0) {
-            dm.removeRow(0);
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Ingin Mereset Data?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0) {
+            DefaultTableModel dm = (DefaultTableModel) Tbl_Detail_Jadwal.getModel();
+            while (dm.getRowCount() > 0) {
+                dm.removeRow(0);
+            }
         }
     }//GEN-LAST:event_Btn_Reset_TableActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Confirmation", JOptionPane.YES_NO_OPTION);
         if (ok == 0) {
             try {
                 String sql = "DELETE * FROM tb_jadwal_mapel WHERE id_jadwal_mapel = '" + selectedId + "'";

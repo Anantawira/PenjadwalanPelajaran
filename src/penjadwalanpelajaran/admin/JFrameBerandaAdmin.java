@@ -521,7 +521,7 @@ public class JFrameBerandaAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogOutMouseClicked
-        int ok = JOptionPane.showConfirmDialog(null, "Apakah Yakin Keluar Aplikasi??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Ingin LogOut?", "Comfirmation", JOptionPane.YES_NO_OPTION);
         if (ok == 0) {
             dispose();
              new penjadwalanpelajaran.JFrameBeranda().setVisible(true);

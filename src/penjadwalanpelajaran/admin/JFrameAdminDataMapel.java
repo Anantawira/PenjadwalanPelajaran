@@ -372,6 +372,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Cari_Mapel.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Mapel.setText("Cari");
+        Btn_Cari_Mapel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Cari_Mapel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Cari_MapelActionPerformed(evt);
@@ -405,6 +406,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Hapus.setText("Hapus");
+        Btn_Hapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_HapusActionPerformed(evt);
@@ -413,6 +415,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Edit.setText("Edit");
+        Btn_Edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_EditActionPerformed(evt);
@@ -421,6 +424,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Refresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Refresh.setText("Refresh");
+        Btn_Refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_RefreshActionPerformed(evt);
@@ -511,6 +515,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Reset.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Reset.setText("Reset");
+        Btn_Reset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_ResetActionPerformed(evt);
@@ -519,6 +524,7 @@ public class JFrameAdminDataMapel extends javax.swing.JFrame {
 
         Btn_Simpan.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Simpan.setText("Simpan");
+        Btn_Simpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_SimpanActionPerformed(evt);

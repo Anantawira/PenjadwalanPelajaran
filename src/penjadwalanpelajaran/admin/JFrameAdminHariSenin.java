@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import penjadwalanpelajaran.admin.Config;
@@ -293,7 +294,7 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_PrintActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Btn_HapusActionPerformed
 
     private void Btn_Refresh_CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Refresh_CariActionPerformed

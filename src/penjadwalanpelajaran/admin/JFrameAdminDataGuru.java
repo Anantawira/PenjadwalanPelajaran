@@ -358,6 +358,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Cari_Guru.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Cari_Guru.setText("Cari");
+        Btn_Cari_Guru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Cari_Guru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Cari_GuruActionPerformed(evt);
@@ -402,14 +403,10 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel12.setText("No Telepon");
 
         Txt_Lihat_NIP.setEditable(false);
-        Txt_Lihat_NIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Lihat_NIPActionPerformed(evt);
-            }
-        });
 
         Btn_Edit.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Edit.setText("Edit");
+        Btn_Edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_EditActionPerformed(evt);
@@ -418,6 +415,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Hapus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Hapus.setText("Hapus");
+        Btn_Hapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_HapusActionPerformed(evt);
@@ -426,6 +424,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Refresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Refresh.setText("Refresh");
+        Btn_Refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_RefreshActionPerformed(evt);
@@ -541,44 +540,9 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Comic Sans MS", 1, 17)); // NOI18N
         jLabel19.setText("Tempat Lahir");
 
-        Txt_Tambah_NIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_NIPActionPerformed(evt);
-            }
-        });
-
-        Txt_Tambah_Tgl_Lahir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_Tgl_LahirActionPerformed(evt);
-            }
-        });
-
-        Txt_Tambah_Alamat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_AlamatActionPerformed(evt);
-            }
-        });
-
-        Txt_Tambah_No_Telepon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_No_TeleponActionPerformed(evt);
-            }
-        });
-
-        Txt_Tambah_Tempat_Lahir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_Tempat_LahirActionPerformed(evt);
-            }
-        });
-
-        Txt_Tambah_Nama_Guru.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Tambah_Nama_GuruActionPerformed(evt);
-            }
-        });
-
         Btn_Reset_Tambah.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Reset_Tambah.setText("Reset");
+        Btn_Reset_Tambah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Reset_Tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Reset_TambahActionPerformed(evt);
@@ -587,6 +551,7 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
 
         Btn_Simpan.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         Btn_Simpan.setText("Simpan");
+        Btn_Simpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_SimpanActionPerformed(evt);
@@ -755,34 +720,6 @@ public class JFrameAdminDataGuru extends javax.swing.JFrame {
     private void jPanelBarKembaliMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBarKembaliMouseReleased
         jPanelBarKembali.setBackground(new Color(26, 128, 179));
     }//GEN-LAST:event_jPanelBarKembaliMouseReleased
-
-    private void Txt_Lihat_NIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Lihat_NIPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Lihat_NIPActionPerformed
-
-    private void Txt_Tambah_NIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_NIPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_NIPActionPerformed
-
-    private void Txt_Tambah_Tgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Tgl_LahirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_Tgl_LahirActionPerformed
-
-    private void Txt_Tambah_AlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_AlamatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_AlamatActionPerformed
-
-    private void Txt_Tambah_No_TeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_No_TeleponActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_No_TeleponActionPerformed
-
-    private void Txt_Tambah_Tempat_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Tempat_LahirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_Tempat_LahirActionPerformed
-
-    private void Txt_Tambah_Nama_GuruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Tambah_Nama_GuruActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tambah_Nama_GuruActionPerformed
 
     private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         try {

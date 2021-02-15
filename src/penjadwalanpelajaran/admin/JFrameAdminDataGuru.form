@@ -509,6 +509,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cari"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Cari_GuruActionPerformed"/>
@@ -593,9 +596,6 @@
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Lihat_NIPActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Lihat_Tgl_Lahir">
                 </Component>
@@ -611,6 +611,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Edit"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_EditActionPerformed"/>
@@ -622,6 +625,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Hapus"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_HapusActionPerformed"/>
@@ -633,6 +639,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Refresh"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_RefreshActionPerformed"/>
@@ -775,34 +784,16 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_NIP">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_NIPActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_Tgl_Lahir">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Tgl_LahirActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_Alamat">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_AlamatActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_No_Telepon">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_No_TeleponActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_Tempat_Lahir">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Tempat_LahirActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Txt_Tambah_Nama_Guru">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Tambah_Nama_GuruActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Btn_Reset_Tambah">
                   <Properties>
@@ -810,6 +801,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Reset"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Reset_TambahActionPerformed"/>
@@ -821,6 +815,9 @@
                       <Font name="Comic Sans MS" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Simpan"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_SimpanActionPerformed"/>
