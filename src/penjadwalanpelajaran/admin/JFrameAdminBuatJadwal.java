@@ -607,7 +607,6 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         Txt_Nama_Guru_9 = new javax.swing.JTextField();
         Txt_Nama_Guru_10 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        Btn_Hapus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -902,15 +901,6 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Guru");
 
-        Btn_Hapus.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        Btn_Hapus.setText("Hapus");
-        Btn_Hapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_HapusActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1058,10 +1048,8 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
                 .addGap(171, 171, 171)
                 .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
                 .addComponent(Btn_Reset_Table, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197))
+                .addGap(269, 269, 269))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1174,8 +1162,7 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Btn_Reset_Table, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
@@ -1622,20 +1609,6 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Btn_Reset_TableActionPerformed
 
-    private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Confirmation", JOptionPane.YES_NO_OPTION);
-        if (ok == 0) {
-            try {
-                String sql = "DELETE * FROM tb_jadwal_mapel WHERE id_jadwal_mapel = '" + selectedId + "'";
-                PreparedStatement st = con.prepareStatement(sql);
-                st.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Anda Berhasil Menghapus");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Anda Gagal Menghapus");
-            }
-        }
-    }//GEN-LAST:event_Btn_HapusActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1676,7 +1649,6 @@ public class JFrameAdminBuatJadwal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn_Hapus;
     private javax.swing.JButton Btn_Reset_Table;
     private javax.swing.JButton Btn_Simpan_1;
     private javax.swing.JButton Btn_Simpan_10;

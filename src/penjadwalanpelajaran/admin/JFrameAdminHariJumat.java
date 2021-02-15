@@ -11,6 +11,8 @@ import penjadwalanpelajaran.admin.Config;
 import penjadwalanpelajaran.hari.*;
 
 public class JFrameAdminHariJumat extends javax.swing.JFrame {
+    
+    String selectedId;
 
     public JFrameAdminHariJumat() {
         initComponents();
@@ -26,6 +28,7 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
     private void LoadTable() {
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
         model.addColumn("Guru Pengajar");
         model.addColumn("Sesi");
         model.addColumn("Kelas");
@@ -42,6 +45,7 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
             java.sql.ResultSet res = stm.executeQuery(sql);
             while (res.next()) {
                 model.addRow(new Object[]{
+                    res.getString(1),
                     res.getString(6),
                     res.getString(4),
                     res.getString(3),
@@ -147,6 +151,11 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
             }
         ));
         jTableAdminHariJumat.setShowVerticalLines(false);
+        jTableAdminHariJumat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableAdminHariJumatMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableAdminHariJumat);
 
         Btn_Refresh.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -260,6 +269,7 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
             Statement stat = (Statement) Config.configDB().createStatement();
             ResultSet res = stat.executeQuery("SELECT * FROM tb_jadwal_mapel WHERE " + " nama_guru LIKE '%" + Txt_Cari.getText() + "%' AND " + " hari LIKE '%" + "Jumat" + "%' OR " + " kelas LIKE '%" + Txt_Cari.getText() + "%' AND " + " hari LIKE '%" + "Jumat" + "%' ORDER BY nama_guru ASC ");
             DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
             model.addColumn("Guru Pengajar");
             model.addColumn("Sesi");
             model.addColumn("Kelas");
@@ -271,6 +281,7 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
             //int no = 1;
             while (res.next()) {
                 model.addRow(new Object[]{
+                    res.getString(1),
                     res.getString(6),
                     res.getString(4),
                     res.getString(3),
@@ -300,8 +311,24 @@ public class JFrameAdminHariJumat extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_PrintActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        // TODO add your handling code here:
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0)
+        try {
+            String sql = "DELETE FROM tb_jadwal_mapel WHERE id_jadwal_mapel = '" + selectedId + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+        LoadTable();
     }//GEN-LAST:event_Btn_HapusActionPerformed
+
+    private void jTableAdminHariJumatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAdminHariJumatMouseClicked
+        int baris = jTableAdminHariJumat.rowAtPoint(evt.getPoint());
+        selectedId = jTableAdminHariJumat.getValueAt(baris, 0).toString();
+    }//GEN-LAST:event_jTableAdminHariJumatMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

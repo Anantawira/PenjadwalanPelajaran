@@ -12,6 +12,8 @@ import penjadwalanpelajaran.admin.Config;
 import penjadwalanpelajaran.hari.*;
 
 public class JFrameAdminHariSenin extends javax.swing.JFrame {
+    
+    String selectedId;
 
     public JFrameAdminHariSenin() {
         initComponents();
@@ -27,6 +29,7 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
     private void LoadTable() {
         // membuat tampilan model tabel
         DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
         model.addColumn("Guru Pengajar");
         model.addColumn("Sesi");
         model.addColumn("Kelas");
@@ -43,6 +46,7 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
             java.sql.ResultSet res = stm.executeQuery(sql);
             while (res.next()) {
                 model.addRow(new Object[]{
+                    res.getString(1),
                     res.getString(6),
                     res.getString(4),
                     res.getString(3),
@@ -148,6 +152,11 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
             }
         ));
         jTableAdminHariSenin.setShowVerticalLines(false);
+        jTableAdminHariSenin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableAdminHariSeninMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableAdminHariSenin);
 
         Btn_Print.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -259,6 +268,7 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
             Statement stat = (Statement) Config.configDB().createStatement();
             ResultSet res = stat.executeQuery("SELECT * FROM tb_jadwal_mapel WHERE " + " nama_guru LIKE '%" + Txt_Cari.getText() + "%' AND " + " hari LIKE '%" + "Senin" + "%' OR " + " kelas LIKE '%" + Txt_Cari.getText() + "%' AND " + " hari LIKE '%" + "Senin" + "%' ORDER BY nama_guru ASC ");
             DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
             model.addColumn("Guru Pengajar");
             model.addColumn("Sesi");
             model.addColumn("Kelas");
@@ -270,6 +280,7 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
             //int no = 1;
             while (res.next()) {
                 model.addRow(new Object[]{
+                    res.getString(1),
                     res.getString(6),
                     res.getString(4),
                     res.getString(3),
@@ -294,13 +305,29 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_PrintActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
-        
+        int ok = JOptionPane.showConfirmDialog(null, "Apakah Anda Yakin Menghapus Data ini??", "Comfirmation", JOptionPane.YES_NO_OPTION);
+        if (ok == 0)
+        try {
+            String sql = "DELETE FROM tb_jadwal_mapel WHERE id_jadwal_mapel = '" + selectedId + "'";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+        LoadTable();
     }//GEN-LAST:event_Btn_HapusActionPerformed
 
     private void Btn_Refresh_CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Refresh_CariActionPerformed
         LoadTable();
         RefreshCari();
     }//GEN-LAST:event_Btn_Refresh_CariActionPerformed
+
+    private void jTableAdminHariSeninMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAdminHariSeninMouseClicked
+        int baris = jTableAdminHariSenin.rowAtPoint(evt.getPoint());
+        selectedId = jTableAdminHariSenin.getValueAt(baris, 0).toString();
+    }//GEN-LAST:event_jTableAdminHariSeninMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
