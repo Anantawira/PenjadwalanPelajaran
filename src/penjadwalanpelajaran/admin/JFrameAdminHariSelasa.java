@@ -2,10 +2,15 @@ package penjadwalanpelajaran.admin;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.MessageFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import penjadwalanpelajaran.admin.Config;
 import penjadwalanpelajaran.hari.*;
@@ -302,7 +307,11 @@ public class JFrameAdminHariSelasa extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelBtnBackMouseClicked
 
     private void Btn_PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PrintActionPerformed
-        // TODO add your handling code here:
+        try {
+            jTableAdminHariSelasa.print(JTable.PrintMode.FIT_WIDTH, new MessageFormat("JADWAL PELAJARAN HARI SELASA"), null);
+        } catch (PrinterException ex) {
+            Logger.getLogger(JFrameAdminHariSelasa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_PrintActionPerformed
 
     private void Btn_Refresh_CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Refresh_CariActionPerformed

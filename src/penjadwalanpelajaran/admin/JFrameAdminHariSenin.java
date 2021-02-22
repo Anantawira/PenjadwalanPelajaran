@@ -2,17 +2,22 @@ package penjadwalanpelajaran.admin;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.text.MessageFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable.PrintMode;
 import javax.swing.table.DefaultTableModel;
 import penjadwalanpelajaran.admin.Config;
 import penjadwalanpelajaran.hari.*;
 
 public class JFrameAdminHariSenin extends javax.swing.JFrame {
-    
+
     String selectedId;
 
     public JFrameAdminHariSenin() {
@@ -301,7 +306,11 @@ public class JFrameAdminHariSenin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelBtnBackMouseClicked
 
     private void Btn_PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PrintActionPerformed
-        // TODO add your handling code here:
+        try {
+            jTableAdminHariSenin.print(PrintMode.FIT_WIDTH, new MessageFormat("JADWAL PELAJARAN HARI SENIN"), null);
+        } catch (PrinterException ex) {
+            Logger.getLogger(JFrameAdminHariSenin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_PrintActionPerformed
 
     private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
