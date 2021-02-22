@@ -23,11 +23,31 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrameAdminHariRabu.MAXIMIZED_BOTH);
         LoadTable();
+        ComboBoxCariKelas();
         
         jTableAdminHariRabu.getTableHeader().setFont(new Font("SEGOE UI", Font.BOLD, 12));
         jTableAdminHariRabu.getTableHeader().setOpaque(false);
         jTableAdminHariRabu.getTableHeader().setForeground(Color.BLACK);
         jTableAdminHariRabu.setRowHeight(25);
+    }
+    
+    public void ComboBoxCariKelas() {
+        try {
+            String sql = "SELECT DISTINCT kelas FROM tb_jadwal_mapel WHERE " + " hari LIKE '%" + "Rabu" + "%' ORDER BY kelas ASC ";
+            java.sql.Connection conn = (Connection) Config.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+
+            while (res.next()) {
+
+                Cmbx_Cari_Kelas.addItem(res.getString("kelas"));
+            }
+            res.close();
+            stm.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     private void LoadTable() {
@@ -66,6 +86,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
 
     public void RefreshCari() {
         Txt_Cari.setText(null);
+        Cmbx_Cari_Kelas.setSelectedIndex(0);
     }
 
     @SuppressWarnings("unchecked")
@@ -85,6 +106,9 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
         Btn_Print = new javax.swing.JButton();
         Btn_Refresh = new javax.swing.JButton();
         Btn_Hapus = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        Btn_Cari_Kelas = new javax.swing.JButton();
+        Cmbx_Cari_Kelas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,7 +156,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Guru / Kelas");
+        jLabel2.setText("Guru");
 
         Btn_Cari.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         Btn_Cari.setText("Cari");
@@ -193,6 +217,22 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Kelas");
+
+        Btn_Cari_Kelas.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Btn_Cari_Kelas.setText("Cari");
+        Btn_Cari_Kelas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Cari_Kelas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Cari_Kelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Cari_KelasActionPerformed(evt);
+            }
+        });
+
+        Cmbx_Cari_Kelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Kelas--" }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -202,21 +242,27 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 971, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(87, 87, 87)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Txt_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Txt_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Btn_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Cmbx_Cari_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Cari_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
+                        .addGap(35, 35, 35)
                         .addComponent(Btn_Hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Btn_Print)
-                .addGap(46, 46, 46))
+                .addGap(62, 62, 62))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,9 +273,12 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
                     .addComponent(Btn_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Txt_Cari, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_Cari_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cmbx_Cari_Kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn_Print, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -243,7 +292,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(158, 158, 158)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +300,7 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 53, Short.MAX_VALUE))
+                .addGap(0, 63, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -339,6 +388,38 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
         selectedId = jTableAdminHariRabu.getValueAt(baris, 0).toString();
     }//GEN-LAST:event_jTableAdminHariRabuMouseClicked
 
+    private void Btn_Cari_KelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cari_KelasActionPerformed
+        try {
+            Statement stat = (Statement) Config.configDB().createStatement();
+            ResultSet res = stat.executeQuery("SELECT * FROM tb_jadwal_mapel WHERE " + " kelas LIKE '%" + Cmbx_Cari_Kelas.getSelectedItem()+ "%' AND " + " hari LIKE '%" + "Rabu" + "%' ORDER BY nama_guru ASC ");
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
+            model.addColumn("Guru Pengajar");
+            model.addColumn("Sesi");
+            model.addColumn("Kelas");
+            model.addColumn("Mata Pelajaran");
+            model.addColumn("Ruang");
+            model.addColumn("Kode Guru");
+
+            jTableAdminHariRabu.setModel(model);
+            //int no = 1;
+            while (res.next()) {
+                model.addRow(new Object[]{
+                    res.getString(1),
+                    res.getString(6),
+                    res.getString(4),
+                    res.getString(3),
+                    res.getString(7),
+                    res.getString(8),
+                    res.getString(5)
+                });
+                jTableAdminHariRabu.setModel(model);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error");
+        }
+    }//GEN-LAST:event_Btn_Cari_KelasActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -380,12 +461,15 @@ public class JFrameAdminHariRabu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Cari;
+    private javax.swing.JButton Btn_Cari_Kelas;
     private javax.swing.JButton Btn_Hapus;
     private javax.swing.JButton Btn_Print;
     private javax.swing.JButton Btn_Refresh;
+    private javax.swing.JComboBox<String> Cmbx_Cari_Kelas;
     private javax.swing.JTextField Txt_Cari;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelBtnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
